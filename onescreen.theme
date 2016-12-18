@@ -16,14 +16,17 @@ function onescreen_preprocess_page(&$variables) {
   $variables['slide1_head'] = theme_get_setting('slide1_head','onescreen');
   $variables['slide1_desc'] = check_markup(theme_get_setting('slide1_desc','onescreen'), 'full_html');
   $variables['slide1_url'] = theme_get_setting('slide1_url','onescreen');
+  $variables['slide1_img'] = theme_get_setting('slide1_img','onescreen');
 
   $variables['slide2_head'] = theme_get_setting('slide2_head','onescreen');
   $variables['slide2_desc'] = check_markup(theme_get_setting('slide2_desc','onescreen'), 'full_html');
   $variables['slide2_url'] = theme_get_setting('slide2_url','onescreen');
+  $variables['slide2_img'] = theme_get_setting('slide2_img','onescreen');
 
   $variables['slide3_head'] = theme_get_setting('slide3_head','onescreen');
   $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc','onescreen'), 'full_html');
   $variables['slide3_url'] = theme_get_setting('slide3_url','onescreen');
+  $variables['slide3_img'] = theme_get_setting('slide3_img','onescreen');
 
   $variables['this_year']= date('Y');
 

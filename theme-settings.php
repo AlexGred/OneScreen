@@ -26,7 +26,7 @@ function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'fieldset',
     '#title' => t('Front Page Slideshow'),
     '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
+    '#collapsed' => TRUE,
   );
   $form['onescreen_settings']['slideshow']['slideshow_display'] = array(
     '#type' => 'checkbox',
@@ -58,6 +58,11 @@ function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide1_url','onescreen'),
   );
+  $form['onescreen_settings']['slideshow']['slide1']['slide1_img'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Slide Img'),
+    '#default_value' => theme_get_setting('slide1_img','onescreen'),
+  );
   $form['onescreen_settings']['slideshow']['slide2'] = array(
     '#type' => 'fieldset',
     '#title' => t('Slide 2'),
@@ -79,6 +84,11 @@ function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide2_url','onescreen'),
   );
+    $form['onescreen_settings']['slideshow']['slide2']['slide2_img'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Slide Img'),
+    '#default_value' => theme_get_setting('slide1_img','onescreen'),
+  );
   $form['onescreen_settings']['slideshow']['slide3'] = array(
     '#type' => 'fieldset',
     '#title' => t('Slide 3'),
@@ -99,6 +109,11 @@ function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'textfield',
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide3_url','onescreen'),
+  );
+    $form['onescreen_settings']['slideshow']['slide3']['slide3_img'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Slide Img'),
+    '#default_value' => theme_get_setting('slide1_img','onescreen'),
   );
   $form['onescreen_settings']['slideshow']['slideimage'] = array(
     '#markup' => t('To change the Slide Images, Replace the slide-image-1.jpg, slide-image-2.jpg and slide-image-3.jpg in the images folder of the theme folder.'),

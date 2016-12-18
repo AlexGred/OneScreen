@@ -20,3 +20,6 @@ slide3_desc: 'Duis aute irure dolor in reprehenderit inLorem ipsum dolor sit ame
 slide1_url: 'node/1'
 slide2_url: 'node/2'
 slide3_url: 'node/3'
+slide1_img: '/themes/onescreen/images/slide-image-1.jpg'
+slide2_img: '/themes/onescreen/images/slide-image-2.jpg'
+slide3_img: '/themes/onescreen/images/slide-image-3.jpg'
