@@ -37,8 +37,6 @@ function onescreen_preprocess_page(&$variables) {
   $variables['footer_col'] = ( ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
   $variables['footer_col'] = ($variables['footer_col'] > 0)
     ? (12 / $variables['footer_col']) : 0;
-
-
 }
 
 /**

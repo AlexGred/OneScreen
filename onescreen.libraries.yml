@@ -4,6 +4,7 @@ global-css:
       css/bootstrap.min.css: {}
       css/flexslider.css: {}
       css/style.css: {}
+      css/global.css: {}
 
 global-js:
   js:
