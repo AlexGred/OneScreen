@@ -1,0 +1,214 @@
+/* 
+
+  Style
+
+*/
+/* Variables and mixins
+==================================*/
+/*
+
+  Variables
+
+*/
+/* Colors
+====================================*/
+/* Fonts
+====================================*/
+/* Components
+==================================*/
+/* 
+
+  Basic html elements 
+
+*/
+* {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+blockquote {
+  position: relative;
+  margin: 30px 20px;
+  padding-left: 25px;
+  font-style: italic;
+  font-weight: bold;
+  color: #000000;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #000000;
+  content: open-quote;
+  font-size: 3em;
+  line-height: .1em;
+  position: absolute;
+  top: 20px;
+  left: -10px;
+}
+blockquote:after {
+  content: '';
+  content: none;
+}
+blockquote p:last-child {
+  margin: 0;
+}
+q {
+  quotes: none;
+}
+q:before,
+q q:after {
+  content: '';
+  content: none;
+}
+/* Body & Main
+================================================== */
+body {
+  nowhitespace: afterproperty;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font: 14px/1.6 'Oxygen', sans-serif;
+  color: #606060;
+}
+/* Links */
+a {
+  color: #f4473a;
+}
+a:visited {
+  color: #f4473a;
+}
+a:hover,
+a:active,
+a:focus {
+  color: #000000;
+  text-decoration: none;
+}
+/* Outline */
+a,
+input,
+textarea,
+button {
+  outline: none;
+}
+/* Img */
+img {
+  max-width: 100%;
+}
+/* Typography
+================================================== */
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 14px;
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}
+small {
+  font-size: 80%;
+}
+p {
+  margin: 0 0 20px;
+}
+/* Tables
+====================================*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+table th {
+  font-weight: bold;
+  padding: 10px 10px;
+}
+table tr {
+  padding: 5px 5px;
+}
+table tr td {
+  padding: 5px 10px;
+}
+/* Lists
+======================================*/
+ul,
+ol {
+  margin: 0 0 1em 1.5em;
+}
+ul {
+  list-style: disc;
+  padding-left: 40px;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  smargin-bottom: 0;
+}
+ol {
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+ol ol {
+  list-style: upper-alpha;
+}
+ol ol ol {
+  list-style: lower-roman;
+}
+ol ol ol ol {
+  list-style: lower-alpha;
+}
+/* Classes
+===================================*/
+/*
+
+  Classes
+
+*/
+/* Clear
+=============================*/
+.remove-margin {
+  margin-right: 0 !important;
+}
+.clear {
+  clear: both;
+}
+/*# sourceMappingURL=global.css.map */
