@@ -5,10 +5,8 @@ description: 'Theme'
 # Regions
 regions:
 
-  branding: 'Branding'
-  main_navigation: 'Main Navigation'
-
   header: 'Header'
+  main_navigation: 'Main Navigation'
 
   preface_first: 'Preface First'
   preface_second: 'Preface Second'

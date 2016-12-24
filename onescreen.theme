@@ -37,6 +37,9 @@ function onescreen_preprocess_page(&$variables) {
   $variables['footer_col'] = ( ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
   $variables['footer_col'] = ($variables['footer_col'] > 0)
     ? (12 / $variables['footer_col']) : 0;
+
+  $variables['copyright_col'] = ( ( (bool) $variables['page']['copyright_first'] + (bool) $variables['page']['copyright_second']) );
+  $variables['copyright_col'] = ($variables['copyright_col'] > 0) ? (12 / $variables['copyright_col']) : 0;
 }
 
 /**

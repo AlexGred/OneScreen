@@ -50,30 +50,29 @@
 #}
 <div id="page">
 
-  <nav id="navigation-region" class="site-navigation navbar navbar-fixed-top" role="banner">
-    {% if page.branding %}
-      <div id="logo" class="site-branding col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        {{ page.branding }}
-      </div>
-    {% endif %}
-    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 main-menu">
-      <div class="mobile-navi"></div>
-      <div id="navigation" role="navigation">
-        <div id="main-menu">
-          {% if page.main_navigation %}
-              {{ page.main_navigation }}
-          {% endif %}
+  <header id="header-region" class="site-header">
+    <nav id="navigation-bar" class="site-navigation navbar navbar-fixed-top" role="banner">
+      {% if page.header %}
+        <div id="logo" class="site-branding col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+          {{ page.header }}
+
+        </div>
+      {% endif %}
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 main-menu">
+        <div class="mobile-navi"></div>
+        <div id="navigation" role="navigation">
+          <div id="main-menu">
+
+            {% if page.main_navigation %}
+                {{ page.main_navigation }}
+            {% endif %}
+
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  
-
-  <header id="header-region" class="site-header">
-    {% if page.header %}
-        {{ page.header }}
-    {% endif %}
-  </header>
+    </nav>
+  </header>  
 
   {% if is_front %}
     {{ attach_library('onescreen/slider-js') }}
@@ -126,21 +125,25 @@
     <div id="preface-region">
       <div class="container">
         <div class="row">
+
           {% if page.preface_first %}
-            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+            <div class="{{ 'preface-block col-xs-12  col-sm-' ~ preface_col }}">
               {{ page.preface_first }}
             </div>
           {% endif %}
+
           {% if page.preface_second %}
-            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+            <div class="{{ 'preface-block hidden-xs col-sm-' ~ preface_col }}">
               {{ page.preface_second }}
             </div>
           {% endif %}
+
           {% if page.preface_third %}
-            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+            <div class="{{ 'preface-block hidden-xs col-sm-' ~ preface_col }}">
               {{ page.preface_third }}
             </div>
           {% endif %}
+
         </div>
       </div>
     </div>
@@ -154,8 +157,11 @@
     <div id="highlighted-region">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            {{ messages }}
             {{ page.highlighted }}
+
           </div>
         </div>
       </div>
@@ -163,53 +169,82 @@
   {% endif %}
 
   <div id="main-content">
-    <div class="container">
-      <div class="row">
+    <div id="primary" class="content-area">
+      <section id="content-regions" role="main" class="clearfix">
 
-        {% if page.sidebar_first %}
-          {% set primary_col = 8 %}
-        {% else %}
-          {% set primary_col = 12 %}
+        {% if show_breadcrumbs %}
+          {% if breadcrumb %}
+            <div id="breadcrumbs">
+              {{ breadcrumb }}
+            </div>
+          {% endif %}
         {% endif %}
 
-        <div id="primary" class="{{ 'content-area col-sm-' ~ primary_col }}">
-          <section id="content" role="main" class="clearfix">
-            {% if show_breadcrumbs %}
-              {% if breadcrumb %}
-                <div id="breadcrumbs">
-                  {{ breadcrumb }}
+        {% if page.sidebar_first and not page.sidebar_second %}
+          {% set content_col = 9 %}
+          {% set siderbar_col = 3 %}
+        {% elseif not page.sidebar_first and page.sidebar_second %}
+          {% set content_col = 9 %}
+          {% set siderbar_col = 3 %}
+        {% elseif  page.sidebar_first and page.sidebar_second %}
+          {% set content_col = 6 %}
+          {% set siderbar_col = 3 %}
+        {% else %}
+          {% set content_col = 12 %}
+        {% endif %}
+
+        
+        {% if page.content_top %}
+          <div id="content_top">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  {{ page.content_top }}
                 </div>
-              {% endif %}
-            {% endif %}
-            {{ messages }}
-            {% if page.content_top %}
-              <div id="content_top">
-                {{ page.content_top }}
               </div>
-            {% endif %}
-
-            {% if page.sidebar_first %}
-              <aside id="sidebar" class="col-sm-4" role="complementary">
-               {{ page.sidebar_first }}
-              </aside>
-            {% endif %}
-            <div id="content-wrap">
-              {{ page.content }}
             </div>
-            {% if page.sidebar_second %}
-              <aside id="sidebar" class="col-sm-4" role="complementary">
-               {{ page.sidebar_second }}
-              </aside>
-            {% endif %}
+          </div>
+        {% endif %}
+       
+        <div id="content-wrap">
+          <div class="container">
+            <div class="row">
 
-            {% if page.content_bottom %}
-              <div id="content_bottom">
-                {{ page.content_bottom }}
+              {% if page.sidebar_first %}
+                <aside id="sidebar_first" class="{{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
+                  {{ page.sidebar_first }}
+                </aside>
+              {% endif %}
+
+              <div id="content" class="{{ 'col-xs-12 col-sm-' ~ content_col }}">
+                {{ page.content }}
               </div>
-            {% endif %}
-          </section>
+
+              {% if page.sidebar_second %}
+                <aside id="sidebar_second" class="{{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
+                 {{ page.sidebar_second }}
+                </aside>
+              {% endif %} 
+
+            </div>
+          </div>
         </div>
-      </div>
+
+        {% if page.content_bottom %}
+          <div id="content_bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                  {{ page.content_bottom }}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+      </section>
     </div>
   </div>
 
@@ -217,8 +252,10 @@
     <div id="footer-block">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
             {{ page.footer }}
+
           </div>
         </div>
       </div>
@@ -229,21 +266,25 @@
     <div id="bottom">
       <div class="container">
         <div class="row">
+
           {% if page.footer_first %}
             <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
               {{ page.footer_first }}
             </div>
           {% endif %}
+
           {% if page.footer_second %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="{{ 'footer-block hidden-xs col-sm-' ~ footer_col }}">
               {{ page.footer_second }}
             </div>
           {% endif %}
+
           {% if page.footer_third %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="{{ 'footer-block hidden-xs col-sm-' ~ footer_col }}">
               {{ page.footer_third }}
             </div>
           {% endif %}
+
         </div>
       </div>
     </div>
@@ -252,16 +293,19 @@
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container">
       <div class="row">
+
         {% if page.copyright_first %}
-          <div class="{{ 'copyright-block col-sm-' ~ 6 }}">
+          <div class="{{ 'copyright-block col-xs-12 col-sm-' ~ copyright_col }}">
             {{ page.copyright_first }}
           </div>
         {% endif %}
+
         {% if page.copyright_second %}
-          <div class="{{ 'copyright-block col-sm-' ~ 6 }}">
+          <div class="{{ 'copyright-block col-xs-12 col-sm-' ~ copyright_col }}">
             {{ page.copyright_second }}
           </div>
         {% endif %}
+
       </div>
     </div>
   </div>
