@@ -7,7 +7,7 @@ dependencies:
     - onescreen
 id: onescreen_help
 theme: onescreen
-region: nelp
+region: help
 weight: 10
 provider: null
 plugin: help_block

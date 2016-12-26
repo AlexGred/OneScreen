@@ -7,7 +7,7 @@ dependencies:
     - onescreen
 id: onescreen_powered
 theme: onescreen
-region: footer_second
+region: copyright_first
 weight: 0
 provider: null
 plugin: system_powered_by_block
