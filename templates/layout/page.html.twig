@@ -52,22 +52,24 @@
 
   <header id="header-region" class="site-header">
     <nav id="navigation-bar" class="site-navigation navbar navbar-fixed-top" role="banner">
-      {% if page.header %}
-        <div id="logo" class="site-branding col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <div class="container">
+        {% if page.header %}
+          <div id="logo" class="site-branding col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
-          {{ page.header }}
+            {{ page.header }}
 
-        </div>
-      {% endif %}
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 main-menu">
-        <div class="mobile-navi"></div>
-        <div id="navigation" role="navigation">
-          <div id="main-menu">
+          </div>
+        {% endif %}
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 main-menu">
+          <div class="mobile-navi"></div>
+          <div id="navigation" role="navigation">
+            <div id="main-menu">
 
-            {% if page.main_navigation %}
-                {{ page.main_navigation }}
-            {% endif %}
+              {% if page.main_navigation %}
+                  {{ page.main_navigation }}
+              {% endif %}
 
+            </div>
           </div>
         </div>
       </div>

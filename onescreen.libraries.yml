@@ -12,6 +12,7 @@ global-js:
     js/superfish.js : {}
     js/mobilemenu.js : {}
     js/custom.js : {}
+    js/script.js : {}
   dependencies:
     - core/jquery
 

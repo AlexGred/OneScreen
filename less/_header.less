@@ -4,13 +4,31 @@
 
 */
 
-/* Header 
+/* Menu bar 
 ===================================*/
-header {
+.site-navigation {
+  min-height: @header-bar-height;
+  height: @header-bar-height;
+  margin-top: 40px;
+  background: transparent;
 
-  .site-navigation {
-    min-height: @header-bar-height;
-    height: @header-bar-height;
+  &.affix-top {
+    position: absolute;
+  }
+
+  &.affix {
+    margin-top: 0;
+
+    &:before {
+      .animation(fadeInDown @main-menu-down both);
+      height: 100%;
+      width: 100%;
+      background: @navbar-bg;
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+    }
   }
 }
 
@@ -31,13 +49,14 @@ header {
 
   .site-title {
     font-weight: 100;
-    font-size: 26px;
+    font-size: 36px;
+    font-family: 'Damion', cursive;
     clear: none;
     margin: 0;
     line-height: @header-bar-height;
 
     a:link {
-      color: @link-link;
+      color: @logo-title;
     }
 
     a:visited:extend(.site-branding .site-title a:link) {

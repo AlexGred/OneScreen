@@ -1,0 +1,59 @@
+/*
+
+  Menu styles
+
+*/
+
+/* Main menu
+============================*/
+.main-menu {
+
+  .menu {
+    height: @header-bar-height;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    li {      
+
+      a {
+        padding: 0 15px;
+        line-height: @header-bar-height;
+        color: @main-menu-link;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.affix {
+
+  .main-menu {
+
+    a.is-active {
+      overflow: hidden;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        background: @main-menu-active;
+        width: 84%;
+        height: 3px;
+        position: absolute;
+        bottom: 0;
+        left: 8%;
+        .animation(slideInUp @main-menu-active-elem both @main-menu-down);
+      }
+    }
+  }
+}
+
+/* Navbar
+============================*/
+.navbar {
+
+}
