@@ -2981,10 +2981,10 @@ body {
 }
 /* Links */
 a {
-  color: #f4473a;
+  color: #fed136;
 }
 a:visited {
-  color: #f4473a;
+  color: #fed136;
 }
 a:hover,
 a:active,
@@ -3092,6 +3092,91 @@ ol ol ol {
 ol ol ol ol {
   list-style: lower-alpha;
 }
+/* Btn, input and etc.
+======================================*/
+input[type="search"],
+input[type="text"],
+input[type="password"] {
+  height: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  background: #efefef;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #606060;
+}
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  height: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 40px;
+  line-height: 60px;
+  background: #fed136;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background: #f9c514;
+}
+/*
+
+  Menu styles
+
+*/
+/* Main menu
+============================*/
+.main-menu .menu {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.main-menu .menu li a {
+  padding: 0 15px;
+  line-height: 60px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13px;
+}
+.affix .main-menu a.is-active {
+  overflow: hidden;
+  position: relative;
+}
+.affix .main-menu a.is-active:before {
+  content: '';
+  display: inline-block;
+  background: #fed136;
+  width: 84%;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  -webkit-animation: slideInUp 0.6s both 0.2s;
+  -moz-animation: slideInUp 0.6s both 0.2s;
+  animation: slideInUp 0.6s both 0.2s;
+}
+/* Navbar
+============================*/
+/*  Regions
+=================================*/
 /*
 
   Header
@@ -3148,43 +3233,26 @@ ol ol ol ol {
 }
 /*
 
-  Menu styles
+  Footer styles
 
 */
-/* Main menu
-============================*/
-.main-menu .menu {
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+/*  Footer
+=========================*/
+.site-footer {
+  padding: 20px 0;
+  background: #ffffff;
+  line-height: 40px;
 }
-.main-menu .menu li a {
-  padding: 0 15px;
-  line-height: 60px;
-  color: #ffffff;
-  text-transform: uppercase;
+/* Bottom region 
+=========================*/
+#bottom {
+  padding: 20px 0px 40px 0px;
+  background: #3f3f3f;
+  border-top: 5px solid #fed136;
+}
+/* Copyright block 
+===========================*/
+#block-onescreen-powered span {
   font-weight: 500;
-  font-size: 13px;
 }
-.affix .main-menu a.is-active {
-  overflow: hidden;
-  position: relative;
-}
-.affix .main-menu a.is-active:before {
-  content: '';
-  display: inline-block;
-  background: #fed136;
-  width: 84%;
-  height: 3px;
-  position: absolute;
-  bottom: 0;
-  left: 8%;
-  -webkit-animation: slideInUp 0.6s both 0.2s;
-  -moz-animation: slideInUp 0.6s both 0.2s;
-  animation: slideInUp 0.6s both 0.2s;
-}
-/* Navbar
-============================*/
 /*# sourceMappingURL=global.css.map */
