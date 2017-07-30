@@ -6,35 +6,6 @@ www.devsaran.com
 
 
 
-
-
-
-
-#primary table {
-  margin: 0 0 1.5em;
-  width: 100%;
-  border:1px solid #ddd;
-  border-right:none;
-  background:#fff;
-}
-
-#primary th {
-  font-weight: bold;
-  padding:10px 10px;
-  background:#555;
-  color:#fff;
-}
-
-#primary tr{
-  padding:5px 5px;
-}
-
-#primary td{
-  padding:5px 10px;
-  border-top:1px solid #ddd;
-  border-right:1px solid #ddd;
-}
-
 /* Typography
 ================================================== */
 
@@ -283,17 +254,7 @@ border-top-left-radius: 4px; border-top-right-radius: 4px; }
 
 #comment-body-add-more-wrapper .form-type-textarea label { margin-bottom: 0.4em; }
 
-/* Other Overrides */
 
-div.password-suggestions { border: 0; }
-
-.ui-widget-overlay { background: #222222; opacity: 0.7; }
-
-div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane { padding: 1em; }
-
-#forum .name { font-size: 1.083em; }
-
-#forum .description { font-size: 1em; }
 
 /* Form Buttons */
 

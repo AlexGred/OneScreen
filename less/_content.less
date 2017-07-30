@@ -10,7 +10,7 @@
 ================================*/
 .poll {
 
-  .vote-form 
+  .vote-form {
 
     .choices {
       margin: 0;
@@ -113,79 +113,109 @@
 }
 
 
-/*-------------------------------------------*
-/* Admin Tabs
-/*-------------------------------------------*/
+/* Admin tabs
+================================== */
 .tabs-wrapper {
-  border-bottom: 1px solid #b7b7b7;
-  margin: 0 0 5px 0;
+  position: fixed;
+  top: 40%;
+  left: -130px; 
+  background: @navbar-bg;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  .transition(all 1s);
+  z-index: 1000;
+  width: 130px;
+
+  &:hover{
+    left: 0;
+  }
+
+  &:hover:after {
+    content: '\f100';
+  }
+
+  &:after {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    margin-top: -20px;
+    background: @navbar-bg;
+    content: '\f101';
+    display: block;
+    font-family: @icon-font;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    line-height: 40px;
+  }
+
+  ul.tabs {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      padding: 2px 0;
+      margin: 0;
+      list-style: none;
+
+      a {
+        color: #ffffff;
+
+        &:hover {
+          color: @logo-title;
+        }
+      }
+    }
+  }
 }
 
-ul.primary li {
-  display: inline;
+
+/* Meta
+============================== */
+.meta {
+  margin: 5px 0 10px 0;
+
+  a {
+    color: #999;
+  
+    &:hover {
+      color: #000;
+    }
+  }
+
+  li {
+    display: inline;
+    margin-right: 5px;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      background: none;
+    }
+  }
+
+  strong{
+    font-weight: 600;
+    color: #111;
+  }
 }
 
-ul.primary {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
 
-ul.primary li a {
-  background: none;
-  border: none;
-  display: block;
-  float: left;
-  line-height: 1.5385em;
-  margin: 0;
-  padding: 0 1em;
-  border-radius: 4px 4px 0 0;
-  margin-right: 5px;
-}
 
-ul.primary li a:hover, ul.primary li a.is-active {
-  background: #666;
-  border: none;
-  color: #fff;
-}
 
-ul.primary li a:hover {
-  background: #888;
-  text-decoration: none;
-}
 
-ul.secondary {
-  background: #666;
-  border-bottom: none;
-  clear: both;
-  margin: 0;
-  padding: 0;
-}
 
-ul.secondary li {
-  display: inline;
-  border-right: none;
-}
 
-ul.secondary li a, ul.secondary li a:link {
-  border: none;
-  color: #ccc;
-  display: block;
-  float: left;
-  line-height: 1.5385em;
-  padding: 0 1em;
-}
 
-ul.secondary li a:hover, ul.secondary li a.is-active {
-  background: #888;
-  color: #fff;
-  text-decoration: none;
-}
 
-ul.secondary a.active {
-  border-bottom: none;
-}
 
-ul.inline, ul.links.inline {
-  margin-left: 0;
-}
+
+
+
+
+
