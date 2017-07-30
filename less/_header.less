@@ -106,21 +106,24 @@
         text-align: center;
         line-height: 80px;
         font-size: 60px;
-        .transition(all 0.4s)
+        .transition(all 0.4s);
+        .box-sizing();
       }
 
       &:hover:before {
-        background: rgba(0, 0, 0, 0.2);
         color: @logo-title;
+        border-color: @logo-title;
       }
     }
 
     .flex-prev:before {
       content: '\f104';
+      border-left: 3px solid transparent;
     }
 
     .flex-next:before {
       content: '\f105';
+      border-right: 3px solid transparent;
     }
 
   }

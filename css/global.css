@@ -3266,20 +3266,25 @@ input[type="button"]:hover {
   text-align: center;
   line-height: 80px;
   font-size: 60px;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: border-color 0.4s;
+  -moz-transition: border-color 0.4s;
+  -o-transition: border-color 0.4s;
+  transition: border-color 0.4s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #slidebox .flex-direction-nav a:hover:before {
-  background: rgba(0, 0, 0, 0.2);
   color: #fed136;
+  border-color: #fed136;
 }
 #slidebox .flex-direction-nav .flex-prev:before {
   content: '\f104';
+  border-left: 3px solid transparent;
 }
 #slidebox .flex-direction-nav .flex-next:before {
   content: '\f105';
+  border-right: 3px solid transparent;
 }
 #slidebox .slides {
   height: 100vh;
