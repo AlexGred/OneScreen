@@ -275,35 +275,6 @@ ol.search-results { padding-left: 0; }
 .search-results .search-snippet-info { padding-left: 0; }
 
 
-.meta {
-  margin: 5px 0 10px 0;
-}
-
-.meta a {
-  color: #999;
-}
-
-.meta a:hover {
-  color: #000;
-}
-
-.meta li {
-  display: inline;
-  margin-right: 5px;
-  margin-right: 10px;
-}
-
-.meta strong{
-  font-weight: 600;
-  color: #111;
-}
-
-.meta li:last-child {
-  margin-right: 0;
-  padding-right: 0;
-  background: none;
-}
-
 .links li a {
   background-color: #E7E5E3;
   color: #100100;
@@ -361,30 +332,7 @@ ul.inline li {
 }
 
 
-/*-------------------------------------------*
-/* Tabs and Tags
-/*-------------------------------------------*/
-.field-name-field-tags {
-  margin: 0 0 10px 0;
-}
 
-.field-name-field-tags a{
-  background: #ed564b;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  border-radius: 2px;
-  color: #fff;
-  padding: 2px 6px;
-}
-
-.field-name-field-tags a:hover{
-  background: #111;
-  color: #fff;
-}
-
-.field-name-field-tags div {
-  display: inline;
-}
 
 
 

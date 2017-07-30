@@ -3518,6 +3518,61 @@ input[type="button"]:hover {
   font-weight: 600;
   color: #111;
 }
+/* Tags 
+================================= */
+.field-name-field-tags {
+  margin: 0 0 10px 0;
+}
+.field-name-field-tags a {
+  background: #ed564b;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  color: #fff;
+  padding: 2px 6px;
+}
+.field-name-field-tags a:hover {
+  background: #111;
+  color: #fff;
+}
+.field-name-field-tags ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.field-name-field-tags ul li {
+  padding: 0;
+  margin: 0;
+  list-style: 0;
+  display: inline-block;
+}
+.field-name-field-tags ul li a {
+  padding-left: 29px;
+  display: inline-block;
+  position: relative;
+  text-shadow: none;
+  background: #fed136;
+  color: #ffffff;
+}
+.field-name-field-tags ul li a:hover {
+  background: #f9c514;
+  color: #ffffff;
+}
+.field-name-field-tags ul li a:before {
+  width: 24px;
+  height: 100%;
+  line-height: 2;
+  content: '\f02b';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(250, 250, 250, 0.5);
+}
 /*
 
   Footer styles
