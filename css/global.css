@@ -3182,6 +3182,13 @@ input[type="button"]:hover {
   Header
 
 */
+/* Header 
+================================*/
+#header-region {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+}
 /* Menu bar 
 ===================================*/
 .site-navigation {
@@ -3266,10 +3273,10 @@ input[type="button"]:hover {
   text-align: center;
   line-height: 80px;
   font-size: 60px;
-  -webkit-transition: border-color 0.4s;
-  -moz-transition: border-color 0.4s;
-  -o-transition: border-color 0.4s;
-  transition: border-color 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
