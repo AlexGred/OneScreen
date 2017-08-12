@@ -76,57 +76,6 @@ p a, p a:visited {
   font-weight: bold;
 }
 
-
-
-/* =Content
------------------------------------------------ */
-
-.node h2.title a, h1.page-title {
-  color: #000000;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-#content .node-teaser {
-  padding-bottom:30px;
-  border-bottom:1px solid #DDDDDD;
-  margin-bottom: 15px;
-}
-
-.node-teaser img {
-  border: 1px solid #CCCCCC;
-  padding: 6px;
-  height: auto;
-  max-width: 97.4%;
-  margin: 0.5em 1em 0.5em 0;
-  float: left;
-}
-.page-node #content-wrap img {
-  border: 1px solid #CCCCCC;
-  padding: 6px;
-  height: auto;
-  max-width: 97.4%;
-  margin: 0.5em 1em 0.5em 0;
-}
-
-.region-content-top {
-  margin-bottom: 20px;
-}
-
-#sidebar .block {
-  margin-bottom: 30px;
-}
-
-#sidebar .block > h2 {
-  font-size: 20px;
-  color:#000;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
 .preface-block .block, .footer-block .block, .region-footer .block, .region-header .block, .region-content-top .block {
   margin-bottom: 30px;
 }
@@ -209,51 +158,6 @@ border-top-left-radius: 4px; border-top-right-radius: 4px; }
 -moz-border-radius-bottomright: 4px; -webkit-border-bottom-left-radius: 4px; -webkit-border-bottom-right-radius: 4px;
 border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 
-/* Comment form */
-
-.comment-form label { float: left; font-size: 0.929em; }
-
-.comment-form input, .comment-form .form-select { margin: 0;
--khtml-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
-
-.comment-form .form-type-textarea label { float: none; }
-
-.comment-form .form-item,
-.comment-form .form-radios,
-.comment-form .form-type-checkbox,
-.comment-form .form-select { margin-bottom: 10px; overflow: hidden; }
-
-.comment-form .form-type-checkbox,
-.comment-form .form-radios { margin-left: 120px; }
-
-.comment-form .form-type-checkbox label,
-.comment-form .form-radios label { float: none; margin-top: 0; }
-
-.comment-form input.form-file { width: auto; }
-
-.comment-form .form-text { display: block; margin: 0; width: 100%;
--moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
-.comment-form .form-item .description { font-size: 0.786em; line-height: 1.2; margin-left: 120px; }
-
-#content h2.comment-form { margin-bottom: 0.5em; }
-
-.comment-form .form-textarea { -khtml-border-radius-topleft: 4px; -khtml-border-radius-topright: 4px;
--moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px;
--webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px;
-border-top-left-radius: 4px; border-top-right-radius: 4px; }
-
-.comment-form fieldset.filter-wrapper .fieldset-wrapper,
-.comment-form .text-format-wrapper .form-item { margin-top: 0; margin-bottom: 0; }
-
-.filter-wrapper label { width: auto; float: none; }
-
-.filter-wrapper .form-select { min-width: 120px; }
-
-.comment-form fieldset.filter-wrapper .tips { font-size: 0.786em; }
-
-#comment-body-add-more-wrapper .form-type-textarea label { margin-bottom: 0.4em; }
-
 
 
 /* Form Buttons */
@@ -333,45 +237,6 @@ ul.inline li {
 
 
 
-
-
-
-/* Comments */
-
-.comment h2.title { margin-bottom: 1em; }
-
-.comment div.user-picture img { margin-left: 0; }
-
-.comment { margin-bottom: 20px; display: table; vertical-align: top; }
-
-.comment .attribution { display: table-cell; padding: 0 35px 0 0; vertical-align: top; overflow: hidden; }
-
-.comment .attribution img { margin: 0; border: 1px solid #d3d7d9; }
-
-.comment .attribution .username { white-space: nowrap; }
-
-.comment .comment-submitted p { margin: 4px 0; font-size: 1.071em; line-height: 1.2; }
-
-.comment .comment-submitted .comment-time { font-size: 0.786em; }
-
-.comment .comment-submitted .comment-permalink { font-size: 0.786em; text-transform: lowercase; }
-
-.comment .content { font-size: 0.929em; line-height: 1.6; }
-
-.comment .comment-arrow { background: url(../images/comment-arrow.gif) no-repeat 0 center transparent;
-border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36px; margin-top: 15px; position: absolute; width: 22px; }
-
-.comment .comment-text { padding: 0 25px 10px 35px; display: table-cell; vertical-align: top; position: relative; width: 100%; border-left: 1px solid #d3d7d9; }
-
-.comment .indented { margin-left: 40px; }
-
-.comment-unpublished { margin-right: 5px; padding: 5px 2px 5px 5px; }
-
-.comment .comment-text .comment-arrow { border-left: 1px solid #ffffff; border-right: 1px solid #ffffff; }
-
-.comments .indented { margin-left: 40px; }
-
-.comments img { max-width: none; }
 
 
 
