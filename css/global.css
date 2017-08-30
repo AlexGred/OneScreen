@@ -3096,7 +3096,8 @@ ol ol ol ol {
 ======================================*/
 input[type="search"],
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   height: 50px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3133,6 +3134,20 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
   background: #f9c514;
+}
+textarea {
+  height: 200px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  background: #efefef;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #606060;
+  line-height: 1.4;
 }
 /*
 
@@ -3820,6 +3835,113 @@ h2.comment-form {
 }
 .path-search #block-onescreen-content ol .search-snippet-info {
   padding-left: 0;
+}
+/* Contact form
+===========================*/
+.contact-form {
+  width: 70%;
+  margin: auto;
+}
+.contact-form .form-item label {
+  display: block;
+  margin-bottom: 2px;
+}
+.contact-form .form-item input,
+.contact-form .form-item textarea {
+  width: 100%;
+}
+.contact-form .form-item input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+.contact-form .form-item input[type="checkbox"] + label {
+  display: inline-block;
+}
+.password-suggestions ul li {
+  margin-left: 1.2em;
+}
+form .form-item {
+  margin-bottom: 1em;
+  margin-top: 2px;
+}
+form .form-item label {
+  font-size: 0.929em;
+}
+form .form-type-radio label,
+form .form-type-checkbox label {
+  margin-left: 4px;
+}
+form .form-type-radio .description,
+form .form-type-checkbox .description {
+  margin-left: 2px;
+}
+form .form-actions {
+  padding-top: 10px;
+}
+/* Fieldset */
+fieldset {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  margin-top: 10px;
+  margin-bottom: 32px;
+  padding: 0 0 10px;
+  position: relative;
+  top: 12px;
+}
+fieldset.collapsed {
+  background: transparent;
+  border-radius: 0;
+}
+fieldset.collapsed legend {
+  border-radius: 4px;
+}
+fieldset legend {
+  background: #dbdbdb;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  display: block;
+  height: 2em;
+  left: -1px;
+  line-height: 2;
+  padding: 0;
+  position: absolute;
+  text-indent: 10px;
+  text-shadow: 0 1px 0 #fff;
+  top: -12px;
+  width: 100%;
+  border-radius: 4px;
+}
+fieldset .fieldset-wrapper {
+  padding: 0 10px;
+  margin-top: 25px;
+}
+fieldset .fieldset-description {
+  margin-top: 5px;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  font-style: italic;
+}
+.node-form .vertical-tabs .fieldset-wrapper {
+  margin-top: 0;
+}
+/* Filter */
+.filter-wrapper {
+  top: 0;
+  padding: 1em 0 0.2em;
+  border: 0;
+}
+.filter-wrapper .form-item {
+  padding: 0 0 0.5em 0.5em;
+}
+.filter-wrapper .form-item label {
+  margin-right: 10px;
+}
+.filter-guidelines {
+  padding: 0 1.5em 0 0.5em;
+}
+.filter-help a {
+  font-size: 0.857em;
+  padding: 2px 20px 0;
 }
 /*
 
