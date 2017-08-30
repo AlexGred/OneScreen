@@ -637,9 +637,169 @@ h2.comment-form {
 }
 
 
+/* Contact form
+===========================*/
+.contact-form {
+  width: 70%;
+  margin: auto;
+  
+  .form-item {
 
+    label {
+      display: block;
+      margin-bottom: 2px;
+    }
 
+    input,
+    textarea {
+      width: 100%;
+    }
 
+    input[type="checkbox"] {
+      display: inline-block;
+      width: auto;
+
+      & + label {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.password-suggestions {
+
+  ul {
+
+    li { 
+      margin-left: 1.2em; 
+    }
+  }
+}
+
+form {
+
+  .form-item { 
+    margin-bottom: 1em; 
+    margin-top: 2px;
+
+    label { 
+      font-size: 0.929em; 
+    } 
+  }
+
+  .form-type-radio {
+
+    label {
+      margin-left: 4px;
+    } 
+
+    .description {
+      margin-left: 2px;
+    }
+  }
+
+  .form-type-checkbox {
+
+    label:extend(form .form-type-radio label) {
+
+    }
+
+    .description:extend(form .form-type-radio .description) {
+
+    }
+  }
+
+  .form-actions { 
+    padding-top: 10px; 
+  }
+}
+
+/* Fieldset */
+fieldset { 
+  background: #ffffff; 
+  border: 1px solid #cccccc;
+  margin-top: 10px; 
+  margin-bottom: 32px;
+  padding: 0 0 10px; 
+  position: relative; 
+  top: 12px; 
+  
+
+  &.collapsed { 
+    background: transparent; 
+    border-radius: 0;
+
+    legend {  
+      border-radius: 4px; 
+    } 
+  }
+
+  legend { 
+    background: #dbdbdb; 
+    border: 1px solid #ccc; 
+    border-bottom: none; 
+    display: block; 
+    height: 2em;
+    left: -1px; 
+    line-height: 2; 
+    padding: 0; 
+    position: absolute; 
+    text-indent: 10px; 
+    text-shadow: 0 1px 0 #fff; 
+    top: -12px; 
+    width: 100%;
+    border-radius: 4px; 
+  }
+
+  .fieldset-wrapper { 
+    padding: 0 10px;
+    margin-top: 25px; 
+  }
+
+  .fieldset-description { 
+    margin-top: 5px; 
+    margin-bottom: 1em; 
+    line-height: 1.4; 
+    font-style: italic; 
+  }
+}
+
+.node-form {
+
+  .vertical-tabs {
+
+    .fieldset-wrapper { 
+      margin-top: 0; 
+    }
+  }
+}
+
+/* Filter */
+.filter-wrapper {
+  top: 0; 
+  padding: 1em 0 0.2em;
+  border: 0; 
+
+  .form-item { 
+    padding: 0 0 0.5em 0.5em; 
+
+    label { 
+      margin-right: 10px; 
+    }
+  }
+}
+
+.filter-guidelines { 
+  padding: 0 1.5em 0 0.5em; 
+}
+
+.filter-help {
+
+  a { 
+    font-size: 0.857em; 
+    padding: 2px 20px 0; 
+  }
+}
 
 
 
