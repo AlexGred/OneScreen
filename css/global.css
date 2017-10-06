@@ -3412,9 +3412,13 @@ h1.page-title:after {
   content: '';
   width: 200px;
   height: 2px;
-  background: #fed136;
   left: 50%;
   margin-left: -100px;
+  background: #fed136;
+  background: -webkit-radial-gradient(#fed136 90%, transparent 10%);
+  background: -o-radial-gradient(#fed136 90%, transparent 10%);
+  background: -moz-radial-gradient(#fed136 90%, transparent 10%);
+  background: radial-gradient(#fed136 10%, transparent 90%);
 }
 /* Block 
 =================================*/
@@ -3957,6 +3961,17 @@ fieldset .fieldset-description {
 .filter-help a {
   font-size: 0.857em;
   padding: 2px 20px 0;
+}
+/* Breadcrumb
+======================== */
+.breadcrumb {
+  margin: 0;
+  padding: 5px 25px 5px 15px;
+  border-radius: 0 5px 5px 0;
+  border-left: 3px solid #fed136;
+  background: #f3f3f3;
+  width: auto;
+  display: inline-block;
 }
 /*
 
