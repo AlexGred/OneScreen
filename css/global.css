@@ -3393,6 +3393,8 @@ textarea {
 */
 /* Basic
 =================================*/
+/* Page title
+=================================== */
 h1.page-title,
 .path-node #content h2.title a {
   color: #444444;
@@ -3400,6 +3402,19 @@ h1.page-title,
   font-weight: normal;
   margin-bottom: 20px;
   margin-top: 10px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+h1.page-title:after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  width: 200px;
+  height: 2px;
+  background: #fed136;
+  left: 50%;
+  margin-left: -100px;
 }
 /* Block 
 =================================*/
@@ -3967,4 +3982,4 @@ fieldset .fieldset-description {
 #block-onescreen-powered span {
   font-weight: 500;
 }
-/*# sourceMappingURL=global.css.map */
+/*# sourceMappingURL=./global.css.map */
