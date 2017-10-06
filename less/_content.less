@@ -1,3 +1,5 @@
+// out: false 
+
 /*
 
   Content
@@ -8,14 +10,31 @@
 
 /* Basic
 =================================*/
+
+
+/* Page title
+=================================== */
 h1.page-title {
   color: #444444;
   font-size: 30px;
   font-weight: normal;
   margin-bottom: 20px;
   margin-top: 10px;
-}
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
 
+  &:after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 200px;
+    height: 2px;
+    background: @logo-title;
+    left: 50%;
+    margin-left: -100px;
+  }
+}
 
 /* Block 
 =================================*/
