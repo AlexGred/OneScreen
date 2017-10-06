@@ -2905,6 +2905,12 @@
 #toolbar-administration {
   display: none;
 }
+.links li:before,
+.menu li:before,
+.slides li:before,
+.flex-direction-nav li:before {
+  display: none;
+}
 /* Components
 ==================================*/
 /* 
@@ -2965,14 +2971,13 @@ q {
   quotes: none;
 }
 q:before,
-q q:after {
+q:after {
   content: '';
   content: none;
 }
 /* Body & Main
 ================================================== */
 body {
-  nowhitespace: afterproperty;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   font: 14px/1.6 'Roboto', sans-serif;
@@ -2992,11 +2997,20 @@ a:focus {
   color: #656565;
   text-decoration: none;
 }
+a:link {
+  text-decoration: none;
+}
 /* Outline */
 a,
 input,
 textarea,
 button {
+  outline: none;
+}
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
   outline: none;
 }
 /* Img */
@@ -3067,17 +3081,29 @@ table tr td {
 ======================================*/
 ul,
 ol {
-  margin: 0 0 1em 1.5em;
+  margin: 0 0 1em 0;
 }
 ul {
-  list-style: disc;
+  list-style: none;
   padding-left: 40px;
 }
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-  smargin-bottom: 0;
+  margin-bottom: 0;
+}
+ul li {
+  list-style: none;
+}
+ul li:before {
+  color: #fed136;
+  content: '\f111';
+  font-family: 'FontAwesome';
+  font-size: 8px;
+  padding-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
 }
 ol {
   list-style-type: decimal;

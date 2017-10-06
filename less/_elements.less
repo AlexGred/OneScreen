@@ -1,3 +1,5 @@
+// out: false
+
 /* 
 
   Basic html elements 
@@ -66,7 +68,7 @@ q {
     content: none;
   }
 
-  q:after:extend(q:before) {
+  &:after:extend(q:before) {
 
   }
 }
@@ -75,7 +77,6 @@ q {
 /* Body & Main
 ================================================== */
 body {
-  nowhitespace: afterproperty;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   font: 14px/1.6 @main-font;
@@ -101,7 +102,11 @@ a {
   }
 
   &:focus:extend(a:hover) {
+    
+  }
 
+  &:link {
+    text-decoration: none;
   }
 }
 
@@ -111,6 +116,10 @@ input,
 textarea,
 button {
   outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 /* Img */
@@ -196,15 +205,29 @@ table {
 /* Lists
 ======================================*/
 ul, ol {
-  margin: 0 0 1em 1.5em;
+  margin: 0 0 1em 0;
 }
 
 ul {
-  list-style: disc;
+  list-style: none;
   padding-left: 40px;
 
-  ul {s
+  ul {
     margin-bottom: 0;
+  }
+
+  li {
+    list-style: none;
+
+     &:before {
+      color: @logo-title;
+      content: '\f111';
+      font-family: @icon-font;
+      font-size: 8px;
+      padding-right: 10px;
+      display: inline-block;
+      vertical-align: middle;
+     }
   }
 
   ol:extend(ul ul) {
