@@ -1,44 +1,3 @@
-/*
-www.devsaran.com
-*/
-
-@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
-
-
-
-/* Typography
-================================================== */
-
-
-
-p img {
-  margin: 0;
-}
-
-
-
-hr {
-  border: solid rgba(0, 0, 0, 0.2);
-  border-width: 1px 0 0;
-  clear: both;
-  margin: 10px 0 30px;
-  height: 0;
-}
-
-p a, p a:visited {
-  line-height: inherit;
-}
-
-
-
-p a, p a:visited {
-  line-height: inherit;
-}
-
-
-
-
-
 /* Layout */
 
 #primary, #sidebar{
@@ -86,34 +45,6 @@ p a, p a:visited {
   background: transparent;
   padding: 0;
   border: 0;
-}
-
-
-
-/*-------------------------------------------*
-/*  and item lists
-/*-------------------------------------------*/
-.item-list ul {
-  margin: 0;
-  padding: 0 0 0 1.5385em;
-}
-
-.item-list ul li {
-  margin: 0;
-  padding: 0;
-}
-
-
-
-ul.inline {
-  clear: both;
-}
-
-ul.inline li {
-  display: inline;
-  list-style: none;
-  margin: 0 2px;
-  padding: 0;
 }
 
 

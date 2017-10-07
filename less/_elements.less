@@ -127,6 +127,14 @@ img {
   max-width: 100%;
 }
 
+p {
+
+  img {
+    margin: 0;
+  }
+}
+
+
 /* Typography
 ================================================== */
 /* Headings */
@@ -178,7 +186,24 @@ small {
 
 p {
   margin: 0 0 20px;
+
+  a {
+    line-height: inherit;
+
+    &:visited {
+      line-height: inherit;
+    }
+  }
 }
+
+hr {
+  border: solid rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 10px 0 30px;
+  height: 0;
+}
+
 
 /* Tables
 ====================================*/
@@ -201,6 +226,7 @@ table {
     }
   }
 }
+
 
 /* Lists
 ======================================*/
@@ -255,6 +281,7 @@ ol {
     }
   }
 }
+
 
 /* Btn, input and etc.
 ======================================*/
