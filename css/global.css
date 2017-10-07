@@ -2911,6 +2911,23 @@
 .flex-direction-nav li:before {
   display: none;
 }
+.item-list ul {
+  margin: 0;
+  padding: 0 0 0 40px;
+}
+.item-list ul li {
+  margin: 0;
+  padding: 0;
+}
+ul.inline {
+  clear: both;
+}
+ul.inline li {
+  display: inline;
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+}
 /* Components
 ==================================*/
 /* 
@@ -3017,6 +3034,9 @@ button:focus {
 img {
   max-width: 100%;
 }
+p img {
+  margin: 0;
+}
 /* Typography
 ================================================== */
 /* Headings */
@@ -3058,6 +3078,19 @@ small {
 }
 p {
   margin: 0 0 20px;
+}
+p a {
+  line-height: inherit;
+}
+p a:visited {
+  line-height: inherit;
+}
+hr {
+  border: solid rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 10px 0 30px;
+  height: 0;
 }
 /* Tables
 ====================================*/
