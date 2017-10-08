@@ -2908,7 +2908,8 @@
 .links li:before,
 .menu li:before,
 .slides li:before,
-.flex-direction-nav li:before {
+.flex-direction-nav li:before,
+.contextual-links li:before {
   display: none;
 }
 .links {
