@@ -19,6 +19,24 @@
   padding: 20px 0px 40px 0px;
   background: @bottom-region-bg;
   border-top: 5px solid @link;
+
+  .block,
+  nav {
+
+    h2 {
+      font-weight: 100;
+      color: @footer-block-title;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    a {
+
+      &:hover {
+        color: lighten(@link-hover, 20%);
+      }
+    }
+  }
 }
 
 
