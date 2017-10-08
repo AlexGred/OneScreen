@@ -2396,6 +2396,12 @@
   animation-duration: 1s;
   animation-fill-mode: both;
 }
+.ta-hidden {
+  opacity: 0;
+}
+.ta-visible {
+  opacity: 1;
+}
 .animated.infinite {
   animation-iteration-count: infinite;
 }
@@ -3318,6 +3324,7 @@ form label {
   position: fixed;
   background: #333237;
   margin-top: 0;
+  opacity: 0;
 }
 /* Site branding 
 ===================================*/
@@ -3423,6 +3430,7 @@ form label {
   text-align: center;
   z-index: 120;
   color: #fff;
+  opacity: 0;
 }
 #slidebox .slides .flex-caption h2 {
   text-transform: uppercase;
@@ -4072,6 +4080,8 @@ fieldset .fieldset-description {
 #main-content {
   padding-top: 20px;
   padding-bottom: 20px;
+  opacity: 0;
+  overflow: hidden;
 }
 /*
 
@@ -4091,6 +4101,7 @@ fieldset .fieldset-description {
   padding: 20px 0px 40px 0px;
   background: #3f3f3f;
   border-top: 5px solid #fed136;
+  opacity: 0;
 }
 #bottom .block h2,
 #bottom nav h2 {
@@ -4102,6 +4113,11 @@ fieldset .fieldset-description {
 #bottom .block a:hover,
 #bottom nav a:hover {
   color: #989898;
+}
+/* Footer
+======================== */
+#footer {
+  opacity: 0;
 }
 /* Copyright block 
 ===========================*/

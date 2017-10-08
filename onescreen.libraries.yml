@@ -8,15 +8,16 @@ global-css:
 global-js:
   js:
     js/bootstrap.min.js : {}
-    js/superfish.js : {}
-    js/mobilemenu.js : {}
-    js/jquery.viewportchecker.min.js:  {}
     js/script.js : {}
   dependencies:
     - core/jquery
 
-
 slider-js:
   js:
     js/jquery.flexslider.js : {}
-    js/slide.js : {}
+    js/slider.js : {}
+
+animation-js:
+  js:
+    js/jquery.viewportchecker.min.js:  {}
+    js/animation.js: {}
