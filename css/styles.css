@@ -3738,9 +3738,8 @@ h1.page-title:after {
 .sidebar .block,
 .sidebar #block-onescreen-user-account-menu,
 .sidebar #block-onescreen-tools {
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .sidebar .block input {
   width: 100%;
@@ -4091,6 +4090,17 @@ fieldset .fieldset-description {
   padding: 20px 0px 40px 0px;
   background: #3f3f3f;
   border-top: 5px solid #fed136;
+}
+#bottom .block h2,
+#bottom nav h2 {
+  font-weight: 100;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 10px;
+}
+#bottom .block a:hover,
+#bottom nav a:hover {
+  color: #989898;
 }
 /* Copyright block 
 ===========================*/
