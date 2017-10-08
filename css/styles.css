@@ -3956,7 +3956,8 @@ form .form-type-checkbox .description {
 form .form-actions {
   padding-top: 10px;
 }
-/* Fieldset */
+/* Fieldset 
+=================== */
 fieldset {
   background: #ffffff;
   border: 1px solid #cccccc;
@@ -4002,7 +4003,8 @@ fieldset .fieldset-description {
 .node-form .vertical-tabs .fieldset-wrapper {
   margin-top: 0;
 }
-/* Filter */
+/* Filter 
+===================== */
 .filter-wrapper {
   top: 0;
   padding: 1em 0 0.2em;
@@ -4033,7 +4035,7 @@ fieldset .fieldset-description {
   display: inline-block;
 }
 /* Fix CKEditor style
-============================= */
+========================= */
 #content table.cke_editor {
   background: transparent;
   border: 0;
@@ -4042,6 +4044,12 @@ fieldset .fieldset-description {
   background: transparent;
   padding: 0;
   border: 0;
+}
+/* Layout
+====================== */
+#main-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 /*
 
@@ -4067,4 +4075,4 @@ fieldset .fieldset-description {
 #block-onescreen-powered span {
   font-weight: 500;
 }
-/*# sourceMappingURL=./global.css.map */
+/*# sourceMappingURL=./styles.css.map */

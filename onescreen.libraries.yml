@@ -3,8 +3,7 @@ global-css:
     theme:
       css/bootstrap.min.css: {}
       css/flexslider.css: {}
-      css/style.css: {}
-      css/global.css: {}
+      css/styles.css: {}
 
 global-js:
   js:
