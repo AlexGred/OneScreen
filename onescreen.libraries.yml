@@ -10,7 +10,7 @@ global-js:
     js/bootstrap.min.js : {}
     js/superfish.js : {}
     js/mobilemenu.js : {}
-    js/custom.js : {}
+    js/jquery.viewportchecker.min.js:  {}
     js/script.js : {}
   dependencies:
     - core/jquery
