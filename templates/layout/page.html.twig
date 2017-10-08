@@ -77,13 +77,13 @@
   </header>  
 
   {% if is_front %}
-    {{ attach_library('onescreen/slider-js') }}
     {% if slideshow_display %}
       <div id="slidebox" class="flexslider">
         <ul class="slides">
           <li>
             <img src="{{ slide1_img|striptags }}"/>
             {% if slide1_head or slide1_desc %}
+              <div class="slides-overlay"></div>
               <div class="flex-caption">
                 <h2>{{ slide1_head|striptags }}</h2>
                 <div class="flex text">{{ slide1_desc|striptags }}</div>
@@ -94,6 +94,7 @@
           <li>
             <img src="{{ slide2_img|striptags }}"/>
             {% if slide2_head or slide2_desc %}
+              <div class="slides-overlay"></div>
               <div class="flex-caption">
                 <h2>{{ slide2_head|striptags }}</h2>
                 <div class="flex text">{{ slide2_desc|striptags }}</div>
@@ -104,6 +105,7 @@
           <li>
             <img src="{{ slide3_img|striptags }}"/>
             {% if slide3_head or slide3_desc %}
+              <div class="slides-overlay"></div>
               <div class="flex-caption">
                 <h2>{{ slide3_head|striptags }}</h2>
                 <div class="flex text">{{ slide3_desc|striptags }}</div>
@@ -112,7 +114,6 @@
             {% endif %}
           </li>
         </ul>
-        <div class="slides-overlay"></div>
       </div>
     {% endif %}
   {% endif %}
