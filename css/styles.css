@@ -2911,6 +2911,9 @@
 .flex-direction-nav li:before {
   display: none;
 }
+.links {
+  padding: 0;
+}
 .item-list ul {
   margin: 0;
   padding: 0 0 0 40px;
@@ -3230,11 +3233,13 @@ textarea {
   font-weight: 500;
   font-size: 13px;
 }
-.affix .main-menu a.is-active {
+.affix .main-menu a.is-active,
+.not-front .main-menu a.is-active {
   overflow: hidden;
   position: relative;
 }
-.affix .main-menu a.is-active:before {
+.affix .main-menu a.is-active:before,
+.not-front .main-menu a.is-active:before {
   content: '';
   display: inline-block;
   background: #fed136;
@@ -3302,6 +3307,11 @@ textarea {
   left: 0;
   top: 0;
   content: '';
+}
+.not-front .site-navigation {
+  position: fixed;
+  background: #333237;
+  margin-top: 0;
 }
 /* Site branding 
 ===================================*/
@@ -3717,18 +3727,25 @@ h1.page-title:after {
   margin: 0.5em 1em 0.5em 0;
   float: left;
 }
-.path-node #sidebar .block {
-  margin-bottom: 30px;
-}
-.path-node #sidebar .block > h2 {
-  font-size: 20px;
-  color: #000;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
 .path-node .region-content-top {
   margin-bottom: 20px;
+}
+.sidebar .block,
+.sidebar #block-onescreen-user-account-menu,
+.sidebar #block-onescreen-tools {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.sidebar .block input {
+  width: 100%;
+}
+.sidebar .block > h2 {
+  font-size: 20px;
+  color: #606060;
+  margin-bottom: 15px;
+  text-transform: none;
+  font-weight: 500;
 }
 /* Comments 
 ======================*/

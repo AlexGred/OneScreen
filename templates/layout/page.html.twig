@@ -207,7 +207,7 @@
             <div class="row">
 
               {% if page.sidebar_first %}
-                <aside id="sidebar_first" class="{{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
+                <aside id="sidebar_first" class=" sidebar {{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
                   {{ page.sidebar_first }}
                 </aside>
               {% endif %}
@@ -217,7 +217,7 @@
               </div>
 
               {% if page.sidebar_second %}
-                <aside id="sidebar_second" class="{{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
+                <aside id="sidebar_second" class=" sidebar {{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
                  {{ page.sidebar_second }}
                 </aside>
               {% endif %} 

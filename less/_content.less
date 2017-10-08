@@ -348,23 +348,37 @@ h1.page-title {
     }
   }
 
-  #sidebar {
+  .region-content-top {
+    margin-bottom: 20px;
+  }
+}
 
-    .block {
-      margin-bottom: 30px;
+.sidebar {
+  
+  .block {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid @sidebar-line;
 
-      & > h2 {
-        font-size: 20px;
-        color:#000;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        font-weight: bold;
-      }
+    input {
+      width: 100%;
+    }
+
+    & > h2 {
+      font-size: 20px;
+      color:#606060;
+      margin-bottom: 15px;
+      text-transform: none;
+      font-weight: 500;
     }
   }
 
-  .region-content-top {
-    margin-bottom: 20px;
+  #block-onescreen-user-account-menu:extend(.sidebar .block) {
+    
+  }
+
+  #block-onescreen-tools:extend(.sidebar .block) {
+    
   }
 }
 
