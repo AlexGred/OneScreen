@@ -2728,10 +2728,14 @@ form label {
   font-weight: 500;
   font-size: 13px;
 }
+.main-menu .menu li a:hover {
+  color: #fed136;
+}
 .affix .main-menu a.is-active,
 .not-front .main-menu a.is-active {
   overflow: hidden;
   position: relative;
+  background: none;
 }
 .affix .main-menu a.is-active:before,
 .not-front .main-menu a.is-active:before {
@@ -2776,7 +2780,6 @@ form label {
   position: relative;
   overflow: hidden;
   height: 100px;
-  opacity: 0;
 }
 /* Menu bar 
 ===================================*/
