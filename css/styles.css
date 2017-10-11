@@ -3251,73 +3251,92 @@ h1.page-title:after {
 /* Comments 
 ======================*/
 .comment {
-  margin-bottom: 20px;
-  display: table;
+  margin-bottom: 40px;
   vertical-align: top;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  position: relative;
 }
 .comment .content {
-  font-size: 0.929em;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 .comment h2.title {
   margin-bottom: 1em;
 }
+.comment mark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  padding: 0 5px;
+  border-radius: 0 3px 3px 0;
+  background: #fed136;
+  color: #4f4f4f;
+}
 .comment .attribution {
-  display: table-cell;
-  padding: 0 35px 0 0;
+  padding: 0 20px 0 0;
   vertical-align: top;
-  overflow: hidden;
+  width: 120px;
 }
 .comment .attribution img {
-  margin: 0;
-  border: 1px solid #d3d7d9;
+  margin-bottom: 5px;
+  border-radius: 0 3px 3px 0;
+  width: 100%;
+  height: auto;
+  border-left: 2px solid #fed136;
 }
 .comment .attribution .username {
   white-space: nowrap;
 }
-.comment div.user-picture img {
-  margin-left: 0;
+.comment .attribution .comment-submitted {
+  width: 100px;
 }
-.comment .comment-submitted p {
+.comment .attribution .comment-submitted p {
   margin: 4px 0;
   font-size: 1.071em;
   line-height: 1.2;
 }
-.comment .comment-submitted .comment-time {
+.comment .attribution .comment-submitted .comment-time {
   font-size: 0.786em;
 }
-.comment .comment-submitted .comment-permalink {
+.comment .attribution .comment-submitted .comment-permalink {
   font-size: 0.786em;
   text-transform: lowercase;
 }
-.comment .comment-arrow {
-  background: url(../images/comment-arrow.gif) no-repeat 0 center transparent;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  height: 40px;
-  margin-left: -36px;
-  margin-top: 15px;
-  position: absolute;
-  width: 22px;
-}
 .comment .comment-text {
-  padding: 0 25px 10px 35px;
-  display: table-cell;
+  padding: 10px 20px;
   vertical-align: top;
   position: relative;
+  background: #f7f7f7;
+  border-radius: 5px;
   width: 100%;
-  border-left: 1px solid #d3d7d9;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
-.comment .indented {
-  margin-left: 40px;
+.comment .comment-text .comment-arrow {
+  display: none;
+}
+.comment .comment-text h3 {
+  margin-top: 0;
+}
+.comment .comment-text .links {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.comment .comment-text .links li {
+  margin-right: 10px;
+}
+.comment .comment-text .links a {
+  font-size: 12px;
 }
 .comment.comment-unpublished {
   margin-right: 5px;
   padding: 5px 2px 5px 5px;
 }
-.comment .comment-text .comment-arrow {
-  border-left: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
+.comments .indented {
+  margin-left: 50px;
+  margin-top: -20px;
 }
 .comments img {
   max-width: none;
