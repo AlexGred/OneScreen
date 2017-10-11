@@ -2398,7 +2398,8 @@
 .menu li:before,
 .slides li:before,
 .flex-direction-nav li:before,
-.contextual-links li:before {
+.contextual-links li:before,
+.tabs li:before {
   display: none;
 }
 .links {
