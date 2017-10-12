@@ -2717,6 +2717,14 @@ form label {
 */
 /* Main menu
 ============================*/
+.main-menu {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main-menu {
+    display: block;
+  }
+}
 .main-menu .menu {
   height: 60px;
   width: 100%;
@@ -2790,9 +2798,14 @@ form label {
 .site-navigation {
   min-height: 60px;
   height: 60px;
-  margin-top: 40px;
+  margin-top: 20px;
   background: transparent;
   opacity: 0;
+}
+@media (min-width: 768px) {
+  .site-navigation {
+    margin-top: 40px;
+  }
 }
 .site-navigation.affix-top {
   position: absolute;
@@ -2819,10 +2832,22 @@ form label {
 }
 /* Site branding 
 ===================================*/
+.site-branding {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .site-branding {
+    text-align: left;
+  }
+}
 .site-branding .site-logo {
-  float: left;
   padding: 0;
-  margin-right: 15px;
+}
+@media (min-width: 768px) {
+  .site-branding .site-logo {
+    float: left;
+    margin-right: 15px;
+  }
 }
 .site-branding .site-logo img {
   height: 60px;
@@ -2935,10 +2960,10 @@ form label {
   -webkit-filter: grayscale(100%);
 }
 #slidebox .slides .flex-caption {
-  width: 80%;
+  width: 94%;
   position: absolute;
-  top: 33%;
-  left: 10%;
+  top: 35%;
+  left: 3%;
   text-align: center;
   z-index: 120;
   color: #fff;
@@ -2947,6 +2972,8 @@ form label {
 @media (min-width: 768px) {
   #slidebox .slides .flex-caption {
     top: 40%;
+    width: 80%;
+    left: 10%;
   }
 }
 @media (min-width: 992px) {

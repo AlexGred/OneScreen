@@ -24,9 +24,13 @@
 .site-navigation {
   min-height: @header-bar-height;
   height: @header-bar-height;
-  margin-top: 40px;
+  margin-top: 20px;
   background: transparent;
   opacity: 0;
+
+  @media @s {
+    margin-top: 40px;
+  }
 
   &.affix-top {
     position: absolute;
@@ -61,11 +65,19 @@
 /* Site branding 
 ===================================*/
 .site-branding {
+  text-align: center;
+
+  @media @s {
+    text-align: left;
+  }
 
   .site-logo {
-    float: left;
     padding: 0;
-    margin-right: 15px;
+
+    @media @s {
+      float: left;
+      margin-right: 15px;
+    }
 
     img {
       height: 60px;
@@ -195,10 +207,10 @@
     }
 
     .flex-caption{
-      width: 80%;
+      width: 94%;
       position: absolute;
-      top: 33%;
-      left: 10%;
+      top: 35%;
+      left: 3%;
       text-align: center;
       z-index: 120;
       color: #fff;
@@ -206,6 +218,8 @@
 
       @media @s {
         top: 40%;
+        width: 80%;
+        left: 10%;
       }
 
       @media @m {
