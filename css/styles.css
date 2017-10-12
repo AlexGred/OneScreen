@@ -2394,6 +2394,9 @@
 #toolbar-administration {
   display: none;
 }
+body {
+  margin: 0 !important;
+}
 .links li:before,
 .menu li:before,
 .slides li:before,
@@ -2854,10 +2857,32 @@ form label {
   z-index: 100;
   opacity: 0.7;
 }
+#slidebox .flex-control-nav {
+  bottom: 20px;
+  z-index: 100;
+  opacity: 0;
+}
+#slidebox .flex-control-nav a {
+  background: #cfcfcf;
+}
+#slidebox .flex-control-nav a.flex-active {
+  background: #fed136;
+}
+@media (min-width: 768px) {
+  #slidebox .flex-control-nav {
+    display: none;
+  }
+}
 #slidebox .flex-direction-nav a {
   background: none;
   width: 40px;
   height: 80px;
+  display: none;
+}
+@media (min-width: 768px) {
+  #slidebox .flex-direction-nav a {
+    display: block;
+  }
 }
 #slidebox .flex-direction-nav a:before {
   display: inline-block;
@@ -2910,15 +2935,26 @@ form label {
   -webkit-filter: grayscale(100%);
 }
 #slidebox .slides .flex-caption {
-  width: 800px;
+  width: 80%;
   position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-left: -400px;
+  top: 33%;
+  left: 10%;
   text-align: center;
   z-index: 120;
   color: #fff;
   opacity: 0;
+}
+@media (min-width: 768px) {
+  #slidebox .slides .flex-caption {
+    top: 40%;
+  }
+}
+@media (min-width: 992px) {
+  #slidebox .slides .flex-caption {
+    width: 800px;
+    left: 50%;
+    margin-left: -400px;
+  }
 }
 #slidebox .slides .flex-caption h2 {
   text-transform: uppercase;

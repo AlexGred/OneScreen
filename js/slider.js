@@ -4,8 +4,8 @@
 
     $('#slidebox').flexslider({
       animation: "fade",
-      directionNav:true,
-      controlNav:false
+      directionNav: true,
+      controlNav: true
     });
 
   });

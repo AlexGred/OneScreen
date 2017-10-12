@@ -19,6 +19,7 @@
 
     $('#navigation-bar').addClass('ta-visible animated fadeInDown');
     $('#slidebox .flex-caption').addClass('ta-visible animated fadeIn');
+    $('#slidebox .flex-control-nav').addClass('ta-visible animated fadeIn');
     
   });
 

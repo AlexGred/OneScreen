@@ -110,12 +110,35 @@
     opacity: 0.7;
   }
 
+  .flex-control-nav {
+    bottom: 20px;
+    z-index: 100;
+    opacity: 0;
+
+    a {
+      background: #cfcfcf;
+
+      &.flex-active {
+        background: @logo-title;
+      }
+    }
+
+    @media @s {
+      display: none;
+    }
+  }
+
   .flex-direction-nav {
 
     a {
       background: none;
       width: 40px;
       height: 80px;
+      display: none;
+
+      @media @s {
+        display: block;
+      }
 
       &:before {
         display: inline-block;
@@ -172,15 +195,24 @@
     }
 
     .flex-caption{
-      width: 800px;
+      width: 80%;
       position: absolute;
-      top: 40%;
-      left: 50%;
-      margin-left: -400px;
+      top: 33%;
+      left: 10%;
       text-align: center;
       z-index: 120;
       color: #fff;
       opacity: 0;
+
+      @media @s {
+        top: 40%;
+      }
+
+      @media @m {
+        width: 800px;
+        left: 50%;
+        margin-left: -400px;
+      }
 
       h2 {
         text-transform: uppercase;
