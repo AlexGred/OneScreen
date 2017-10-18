@@ -1,6 +1,6 @@
 /*
 
-js
+Scripts
 
 */
 
@@ -13,6 +13,16 @@ js
       offset: {
         top: 40
       }
+    });
+
+    $('.mobile-nav').click(function() {
+      $('.navigation').removeClass('close');
+      $('.navigation').addClass('open');
+    });
+
+    $('.mobile-nav-close').click(function() {
+      $('.navigation').removeClass('open');
+      $('.navigation').addClass('close');
     });
     
   });

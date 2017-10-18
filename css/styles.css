@@ -2719,29 +2719,167 @@ form label {
 /* Main menu
 ============================*/
 .main-menu {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 @media (min-width: 768px) {
   .main-menu {
-    display: block;
+    position: static;
   }
 }
-.main-menu .menu {
+.main-menu .mobile-nav {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .main-menu .mobile-nav {
+    display: none;
+  }
+}
+.main-menu .mobile-nav:before {
+  content: '\f0c9';
+  font-family: 'FontAwesome';
+  display: block;
+  line-height: 60px;
+  color: #ffffff;
+  font-size: 28px;
+}
+.main-menu .mobile-nav:hover:before {
+  color: #fed136;
+}
+.main-menu .navigation {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+  -webkit-transition: left 0.6s;
+  -moz-transition: left 0.6s;
+  -o-transition: left 0.6s;
+  transition: left 0.6s;
+  background: #333237;
+}
+@media (min-width: 768px) {
+  .main-menu .navigation {
+    position: static;
+    background: none;
+    height: auto;
+    width: auto;
+  }
+}
+.main-menu .navigation.open {
+  left: 0;
+}
+.main-menu .navigation.close {
+  left: -100%;
+  opacity: 1;
+}
+.main-menu .navigation .mobile-nav-close {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  text-align: center;
+  z-index: 100;
+}
+@media (min-width: 768px) {
+  .main-menu .navigation .mobile-nav-close {
+    display: none;
+  }
+}
+.main-menu .navigation .mobile-nav-close:before {
+  content: '\f00d';
+  display: block;
+  line-height: 60px;
+  color: #ffffff;
+  font-size: 30px;
+  font-family: 'FontAwesome';
+}
+.main-menu .navigation .mobile-nav-close:hover:before {
+  color: #fed136;
+}
+.main-menu .navigation nav {
+  height: 100%;
+}
+.main-menu .navigation .menu {
   height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  flex-flow: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 90px 0 20px;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.main-menu .menu li a {
+@media (min-width: 768px) {
+  .main-menu .navigation .menu {
+    padding: 0;
+    justify-content: flex-end;
+    flex-flow: row;
+  }
+}
+.main-menu .navigation .menu li {
+  width: 60%;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .main-menu .navigation .menu li {
+    width: auto;
+    text-align: left;
+  }
+}
+.main-menu .navigation .menu li:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fed136;
+  background: -webkit-radial-gradient(#fed136 90%, transparent 10%);
+  background: -o-radial-gradient(#fed136 90%, transparent 10%);
+  background: -moz-radial-gradient(#fed136 90%, transparent 10%);
+  background: radial-gradient(#fed136 10%, transparent 90%);
+}
+@media (min-width: 768px) {
+  .main-menu .navigation .menu li:before {
+    display: none;
+  }
+}
+.main-menu .navigation .menu li:last-child:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fed136;
+  background: -webkit-radial-gradient(#fed136 90%, transparent 10%);
+  background: -o-radial-gradient(#fed136 90%, transparent 10%);
+  background: -moz-radial-gradient(#fed136 90%, transparent 10%);
+  background: radial-gradient(#fed136 10%, transparent 90%);
+}
+@media (min-width: 768px) {
+  .main-menu .navigation .menu li:last-child:after {
+    display: none;
+  }
+}
+.main-menu .navigation .menu li a {
   padding: 0 15px;
   line-height: 60px;
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 13px;
+  text-shadow: none;
 }
-.main-menu .menu li a:hover {
+.main-menu .navigation .menu li a:hover {
   color: #fed136;
 }
 .affix .main-menu a.is-active,
@@ -2753,7 +2891,7 @@ form label {
 .affix .main-menu a.is-active:before,
 .not-front .main-menu a.is-active:before {
   content: '';
-  display: inline-block;
+  display: none;
   background: #fed136;
   width: 84%;
   height: 3px;
@@ -2763,6 +2901,12 @@ form label {
   -webkit-animation: slideInUp 0.6s both 0.2s;
   -moz-animation: slideInUp 0.6s both 0.2s;
   animation: slideInUp 0.6s both 0.2s;
+}
+@media (min-width: 768px) {
+  .affix .main-menu a.is-active:before,
+  .not-front .main-menu a.is-active:before {
+    display: inline-block;
+  }
 }
 /* Navbar
 ============================*/
