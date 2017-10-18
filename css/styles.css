@@ -3665,6 +3665,26 @@ fieldset .fieldset-description {
   background: #ffffff;
   line-height: 40px;
 }
+/* Copyright region
+======================== */
+.copyright-block-1 {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .copyright-block-1 {
+    text-align: left;
+  }
+}
+.copyright-block-2 {
+  text-align: center;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .copyright-block-2 {
+    margin-top: 0;
+    text-align: left;
+  }
+}
 /* Bottom region 
 =========================*/
 #bottom {

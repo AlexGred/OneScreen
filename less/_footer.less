@@ -1,3 +1,5 @@
+// out: false
+
 /*
 
   Footer styles
@@ -10,6 +12,27 @@
   padding: 20px 0;
   background: @footer-bg;
   line-height: 40px;
+}
+
+
+/* Copyright region
+======================== */
+.copyright-block-1 {
+  text-align: center;
+
+  @media @s {
+    text-align: left;
+  }
+}
+
+.copyright-block-2 {
+  text-align: center;
+  margin-top: 20px;
+
+  @media @s {
+    margin-top: 0;
+    text-align: left;
+  }
 }
 
 
