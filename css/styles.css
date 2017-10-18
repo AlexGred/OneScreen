@@ -2831,6 +2831,13 @@ form label {
   top: 0;
   content: '';
 }
+.site-navigation.affix .site-logo {
+  left: 15px;
+}
+.site-navigation.affix .site-title {
+  right: 15px;
+  top: 0;
+}
 .not-front .site-navigation {
   position: fixed;
   background: #333237;
@@ -2840,19 +2847,34 @@ form label {
 ===================================*/
 .site-branding {
   text-align: center;
+  width: 230px;
+  margin: auto;
+  height: 60px;
 }
 @media (min-width: 768px) {
   .site-branding {
     text-align: left;
+    width: 33.33333333333333%;
+    height: auto;
   }
 }
 .site-branding .site-logo {
   padding: 0;
+  position: absolute;
+  top: 0;
+  left: 93px;
+  width: 44px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (min-width: 768px) {
   .site-branding .site-logo {
+    position: static;
     float: left;
     margin-right: 15px;
+    width: auto;
   }
 }
 .site-branding .site-logo img {
@@ -2866,10 +2888,31 @@ form label {
   clear: none;
   margin: 0;
   line-height: 60px;
+  position: absolute;
+  top: 60px;
+  right: 38px;
+  width: 156px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (min-width: 768px) {
+  .site-branding .site-title {
+    position: static;
+    width: auto;
+  }
 }
 .site-branding .site-title a:link,
 .site-branding .site-title a:visited {
   color: #fed136;
+}
+.not-front .site-logo {
+  left: 15px;
+}
+.not-front .site-title {
+  right: 15px;
+  top: 0;
 }
 /* Slider
 ====================================*/
