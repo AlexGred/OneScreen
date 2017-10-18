@@ -3625,7 +3625,15 @@ fieldset .fieldset-description {
 }
 /* Breadcrumb
 ======================== */
-.breadcrumb {
+#breadcrumbs {
+  display: none;
+}
+@media (min-width: 768px) {
+  #breadcrumbs {
+    display: block;
+  }
+}
+#breadcrumbs .breadcrumb {
   margin: 0;
   padding: 5px 25px 5px 15px;
   border-radius: 0 5px 5px 0;
