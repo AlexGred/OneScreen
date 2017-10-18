@@ -2791,7 +2791,12 @@ form label {
 .not-front #header-region {
   position: relative;
   overflow: hidden;
-  height: 100px;
+  height: 60px;
+}
+@media (min-width: 768px) {
+  .not-front #header-region {
+    height: 100px;
+  }
 }
 /* Menu bar 
 ===================================*/
