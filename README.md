@@ -13,5 +13,5 @@ OneScreen is a flat responsive Drupal 8 theme. This theme based on bootstrap fra
 * Code with LESS
 
 
-### Slideshow configuration
+## Slideshow configuration
 Slideshow can configure completely from theme settings page. You need upload image, add title, description and link for active button.
