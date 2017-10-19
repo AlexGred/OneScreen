@@ -1,0 +1,1 @@
+OneScreen is a flat responsive Drupal 8 theme. This theme based on bootstrap framework. Its very light weight with modern look and feel. This theme includes an image slideshow or photo slideshow feature on standard installation. Best way to make landingpage, blog, portfolio or a variety of other websites.
