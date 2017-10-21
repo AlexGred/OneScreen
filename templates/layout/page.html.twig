@@ -166,6 +166,14 @@
     </div>
   {% endif %}
 
+  {% if page.landing_page %}
+    <div id="landing-page-region">
+      <div class="landing-page-wrapper">
+        {{ page.landing_page }}
+      </div>
+    </div>
+  {% endif %}
+
   <div id="main-content">
     <div id="primary" class="content-area">
       <section id="content-regions" role="main" class="clearfix">

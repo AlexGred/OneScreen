@@ -2385,7 +2385,7 @@
 =============================== */
 [class*='icon-'] {
   display: inline-block;
-  margin-left: 7px;
+  margin-right: 7px;
 }
 [class*='icon-']:before {
   content: '';
@@ -2448,6 +2448,20 @@
 }
 .icon-od:before {
   content: '\f263';
+}
+/* Backgrounds
+======================= */
+.bg-grey {
+  background-color: #dddddd;
+}
+.bg-yellow {
+  background-color: #fed136;
+}
+.bg-dark {
+  background-color: #333237;
+}
+.bg-light {
+  background-color: #e5e5e5;
 }
 /* Overides
 ====================================*/
@@ -3921,6 +3935,38 @@ fieldset .fieldset-description {
   padding-bottom: 20px;
   opacity: 0;
   overflow: hidden;
+}
+/* Landing page
+======================== */
+#landing-page-region .block {
+  padding: 30px 15px;
+}
+@media (min-width: 768px) {
+  #landing-page-region .block {
+    padding: 40px 0;
+  }
+}
+#landing-page-region .block .block-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  #landing-page-region .block .block-wrapper {
+    width: 728px;
+  }
+}
+@media (min-width: 992px) {
+  #landing-page-region .block .block-wrapper {
+    width: 940px;
+  }
+}
+@media (min-width: 1200px) {
+  #landing-page-region .block .block-wrapper {
+    width: 1170px;
+  }
+}
+#landing-page-region .block .block-title {
+  margin-top: 0;
 }
 /*
 

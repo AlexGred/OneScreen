@@ -28,14 +28,16 @@
  */
 #}
 <!-- block -->
-<div class="block" {{ attributes }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2 class="block-title" {{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+<div class="block {{ attributes.class }}">
+  <div class="block-wrapper">
+    {{ title_prefix }}
+    {% if label %}
+      <h2 class="block-title" {{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
 </div>
 <!-- /block -->

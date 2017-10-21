@@ -16,6 +16,8 @@ regions:
 
   highlighted: 'Highlighted'
 
+  landing_page: 'Landing Page'
+
   content_top: 'Content Top'
   sidebar_first: 'Sidebar First'
   content: 'Content'
@@ -27,7 +29,6 @@ regions:
   footer_first: 'First Bottom'
   footer_second: 'Second Bottom'
   footer_third: 'Third Bottom'
-  footer_fourth: 'Fourth Bottom'
 
   copyright_first: 'Copyright First'
   copyright_second: 'Copyright Second'  
