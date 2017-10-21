@@ -19,4 +19,4 @@ Slideshow can configure completely from theme settings page. You need upload ima
 
 
 ## Supported modules
-*[Block Class](https://www.drupal.org/project/block_class) - for styling blocks in landing page region
+* [Block Class](https://www.drupal.org/project/block_class) - for styling blocks in landing page region
