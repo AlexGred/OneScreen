@@ -3938,6 +3938,9 @@ fieldset .fieldset-description {
 }
 /* Landing page
 ======================== */
+#landing-page-region {
+  opacity: 0;
+}
 #landing-page-region .block {
   padding: 30px 15px;
 }

@@ -2,6 +2,11 @@
 
   $(document).ready(function() {
 
+    $('#landing-page-region').viewportChecker({
+      classToAdd: 'ta-visible animated fadeIn',
+      offset: 150    
+    });
+
     $('#main-content').viewportChecker({
       classToAdd: 'ta-visible animated fadeIn',
       offset: 150    
