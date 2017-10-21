@@ -2381,6 +2381,74 @@
 .clear {
   clear: both;
 }
+/* Social network icons
+=============================== */
+[class*='icon-'] {
+  display: inline-block;
+  margin-left: 7px;
+}
+[class*='icon-']:before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 36px;
+  font-family: 'FontAwesome';
+  border-radius: 50%;
+  background: #c1c1c1;
+  text-align: center;
+  line-height: 36px;
+  color: #ffffff;
+  font-size: 16px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+[class*='icon-']:hover:before {
+  background: #fed136;
+}
+.icon-gplus:before {
+  content: '\f0d5';
+}
+.icon-tw:before {
+  content: '\f099';
+}
+.icon-fb:before {
+  content: '\f09a';
+}
+.icon-vk:before {
+  content: '\f189';
+}
+.icon-gh:before {
+  content: '\f09b';
+}
+.icon-p:before {
+  content: '\f231';
+}
+.icon-gl:before {
+  content: '\f296';
+}
+.icon-inst:before {
+  content: '\f16d';
+}
+.icon-twitch:before {
+  content: '\f1e8';
+}
+.icon-vimeo:before {
+  content: '\f27d';
+}
+.icon-tg:before {
+  content: '\f2c6';
+}
+.icon-skype:before {
+  content: '\f17e';
+}
+.icon-yt:before {
+  content: '\f167';
+}
+.icon-od:before {
+  content: '\f263';
+}
 /* Overides
 ====================================*/
 /*
