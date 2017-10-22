@@ -2507,6 +2507,12 @@ ul.inline li {
   margin: 0 2px;
   padding: 0;
 }
+[class*='col-xs-'],
+[class*='col-sm-'],
+[class*='col-md-'],
+[class*='col-lg-'] {
+  min-height: 0;
+}
 /* Components
 ==================================*/
 /* 
@@ -3019,11 +3025,6 @@ form label {
   position: relative;
   overflow: hidden;
   height: 60px;
-}
-@media (min-width: 768px) {
-  .not-front #header-region {
-    height: 100px;
-  }
 }
 /* Menu bar 
 ===================================*/
@@ -3591,10 +3592,15 @@ h1.page-title:after {
 .comment {
   margin-bottom: 40px;
   vertical-align: top;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
+  display: block;
   position: relative;
+}
+@media (min-width: 768px) {
+  .comment {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
 }
 .comment .content {
   line-height: 1.4;
@@ -3612,9 +3618,23 @@ h1.page-title:after {
   color: #4f4f4f;
 }
 .comment .attribution {
-  padding: 0 20px 0 0;
-  vertical-align: top;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .comment .attribution {
+    padding: 0 20px 0 0;
+    vertical-align: top;
+    width: 120px;
+    overflow: visible;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+}
+.comment .attribution article {
   width: 120px;
+  float: left;
 }
 .comment .attribution img {
   margin-bottom: 5px;
@@ -3627,7 +3647,13 @@ h1.page-title:after {
   white-space: nowrap;
 }
 .comment .attribution .comment-submitted {
-  width: 100px;
+  margin-left: 130px;
+}
+@media (min-width: 768px) {
+  .comment .attribution .comment-submitted {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 .comment .attribution .comment-submitted p {
   margin: 4px 0;
@@ -3673,8 +3699,13 @@ h1.page-title:after {
   padding: 5px 2px 5px 5px;
 }
 .comments .indented {
-  margin-left: 50px;
+  margin-left: 30px;
   margin-top: -20px;
+}
+@media (min-width: 768px) {
+  .comments .indented {
+    margin-left: 50px;
+  }
 }
 .comments img {
   max-width: none;
@@ -3902,6 +3933,7 @@ fieldset .fieldset-description {
 ======================== */
 #breadcrumbs {
   display: none;
+  margin: 20px 0;
 }
 @media (min-width: 768px) {
   #breadcrumbs {
@@ -3931,7 +3963,7 @@ fieldset .fieldset-description {
 /* Layout
 ====================== */
 #main-content {
-  padding-top: 20px;
+  padding-top: 0;
   padding-bottom: 20px;
   opacity: 0;
   overflow: hidden;
@@ -3970,6 +4002,11 @@ fieldset .fieldset-description {
 }
 #landing-page-region .block .block-title {
   margin-top: 0;
+}
+/* Preface
+===================== */
+#preface-region .block {
+  margin-bottom: 20px;
 }
 /*
 

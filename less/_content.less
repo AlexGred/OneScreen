@@ -387,10 +387,14 @@ h1.page-title {
 .comment {
   margin-bottom: 40px; 
   vertical-align: top;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
+  display: block;
   position: relative;
+
+  @media @s {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
 
   .content { 
     line-height: 1.4; 
@@ -411,9 +415,21 @@ h1.page-title {
   }
 
   .attribution { 
-    padding: 0 20px 0 0; 
-    vertical-align: top;
-    width: 120px;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    @media @s {
+      padding: 0 20px 0 0; 
+      vertical-align: top;
+      width: 120px;
+      overflow: visible;
+      .box-sizing(content-box);
+    }
+
+    article {
+      width: 120px;
+      float: left;
+    }
       
     img { 
       margin-bottom: 5px; 
@@ -428,7 +444,12 @@ h1.page-title {
     }
 
     .comment-submitted {
-      width: 100px;
+      margin-left: 130px;
+
+      @media @s {
+        width: 100%;
+        margin-left: 0;
+      }
       
       p { 
         margin: 4px 0; 
@@ -487,8 +508,12 @@ h1.page-title {
 .comments {
 
   .indented { 
-    margin-left: 50px;
+    margin-left: 30px;
     margin-top: -20px; 
+
+    @media @s {
+      margin-left: 50px;
+    }
   }
 
   img { 
@@ -854,6 +879,7 @@ fieldset {
 ======================== */
 #breadcrumbs {
   display: none;
+  margin: 20px 0;
 
   @media @s {
     display: block;
@@ -891,7 +917,7 @@ fieldset {
 /* Layout
 ====================== */
 #main-content {
-  padding-top: 20px;
+  padding-top: 0;
   padding-bottom: 20px;
   opacity: 0;
   overflow: hidden;
@@ -933,6 +959,15 @@ fieldset {
   }
 }
 
+
+/* Preface
+===================== */
+#preface-region {
+
+  .block {
+    margin-bottom: 20px;
+  }
+}
 
 
 
