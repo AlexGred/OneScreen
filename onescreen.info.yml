@@ -40,7 +40,7 @@ libraries:
   - onescreen/slider-js
   - onescreen/animation-js
 
-version: '8.0.3'
+version: '8.1.x-dev'
 core: '8.x'
 project: 'onescreen'
 datestamp: 1476881102
