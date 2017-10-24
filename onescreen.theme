@@ -62,7 +62,7 @@ function onescreen_preprocess_page(&$variables) {
   $variables['slide2_img'] = theme_get_setting('slide2_img', 'onescreen');
 
   $variables['slide3_head'] = theme_get_setting('slide3_head', 'onescreen');
-  $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc','onescreen'), 'full_html');
+  $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc', 'onescreen'), 'full_html');
   $variables['slide3_url'] = theme_get_setting('slide3_url', 'onescreen');
   $variables['slide3_img'] = theme_get_setting('slide3_img', 'onescreen');
 
@@ -79,20 +79,15 @@ function onescreen_preprocess_page(&$variables) {
 }
 
 /**
- * Prepares variables for comment templates.
+ * Implements template_preprocess_breadcrumb()
  *
- * Default template: comment.html.twig.
- *
- * @param array $variables
- *   An associative array containing:
- *   - elements: An associative array containing the comment and entity objects.
- *     Array keys: #comment, #commented_entity.
+ * Override or insert breadcrumbs.
  */
 function onescreen_preprocess_breadcrumb(&$variables) {
   if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
-    $variables['breadcrumb'][] = array(
+    $variables['breadcrumb'][] = [
       'text' => $node->getTitle(),
-      'url' => $node->URL()
-   );
+      'url' => $node->URL(),
+    ];
   }
 }
