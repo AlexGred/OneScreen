@@ -92,6 +92,6 @@ function onescreen_preprocess_breadcrumb(&$variables) {
     $variables['breadcrumb'][] = array(
       'text' => $node->getTitle(),
       'url' => $node->URL(),
-   );
+    );
   }
 }
