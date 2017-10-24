@@ -3,7 +3,7 @@
 /**
  * @file
  * Theme setting callbacks for the Adminimal theme.
- */
+*/
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -12,9 +12,9 @@
  *   The form.
  * @param $form_state
  *   The form state.
- */
-
+*/
 function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
+  
   $form['onescreen_settings'] = [
     '#type' => 'fieldset',
     '#title' => t('onescreen Settings'),
@@ -63,7 +63,7 @@ function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide1_url', 'onescreen'),
   ];
-  $form['onescreen_settings']['slideshow']['slide1']['slide1_img'] = array(
+  $form['onescreen_settings']['slideshow']['slide1']['slide1_img'] = [
     '#type' => 'textfield',
     '#title' => t('Slide Img'),
     '#default_value' => theme_get_setting('slide1_img', 'onescreen'),
