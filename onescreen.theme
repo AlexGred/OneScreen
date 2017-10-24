@@ -79,13 +79,9 @@ function onescreen_preprocess_page(&$variables) {
 }
 
 /**
- * Prepares variables for breadcrumb templates.
+ * Implements template_preprocess_breadcrumb()
  *
- * Default template: breadcrumb.html.twig.
- *
- * @param array $variables
- *   An associative array containing:
- *   - links: A list of \Drupal\Core\Link objects which should be rendered.
+ * Override or insert breadcrumbs.
  */
 function onescreen_preprocess_breadcrumb(&$variables) {
   if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
