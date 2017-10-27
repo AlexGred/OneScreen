@@ -11,11 +11,35 @@
 }
 
 #toolbar-administration {
-  display: none;
-}
 
-body {
-  margin: 0 !important;
+  #toolbar-bar {
+    z-index: 1031;
+  }
+
+  button {
+    height: 39px;
+  }
+
+  .toolbar-tray {
+
+    a {
+      color: #565656;
+    }
+  }
+
+  [class*='icon-']:before {
+
+  }
+  
+  .toolbar-menu {
+
+    li {
+      
+      &:before {
+        display: none;
+      }
+    }
+  }
 }
 
 .links,
@@ -66,4 +90,14 @@ ul.inline {
 [class*='col-md-'],
 [class*='col-lg-'] {
   min-height: 0;
+}
+
+body {
+
+  &.toolbar-tray-open {
+
+    &.toolbar-vertical {
+      width: 100%;
+    }
+  }
 }

@@ -168,6 +168,51 @@
   }
 }
 
+body {
+
+  &.toolbar-horizontal,
+  &.toolbar-vertical {
+    
+    .navbar-fixed-top {
+      top: 39px;
+    }
+  }
+
+  .affix.navbar-fixed-top {
+    top: 0;
+  }
+
+  @media @s {
+
+    .affix.navbar-fixed-top {
+      top: 39px;
+    }
+  
+    &.toolbar-tray-open {
+  
+      &.toolbar-horizontal {
+  
+        .navbar-fixed-top {
+          top: 79px;
+        }
+      }
+  
+      &.toolbar-vertical {
+        
+        .navbar-fixed-top {
+          margin-left: 15rem;
+        }
+      }
+  
+      .site-title {
+        position: absolute;
+        top: 0;
+        left: 73px;
+      }
+    }
+  }
+}
+
 .affix,
 .not-front {
 
