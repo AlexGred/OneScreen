@@ -2383,11 +2383,11 @@
 }
 /* Social network icons
 =============================== */
-[class*='icon-'] {
+[class^='icon-'] {
   display: inline-block;
   margin-right: 7px;
 }
-[class*='icon-']:before {
+[class^='icon-']:before {
   content: '';
   display: block;
   width: 36px;
@@ -2404,7 +2404,7 @@
   -o-transition: background 0.4s;
   transition: background 0.4s;
 }
-[class*='icon-']:hover:before {
+[class^='icon-']:hover:before {
   background: #fed136;
 }
 .icon-gplus:before {
@@ -2473,11 +2473,14 @@
 .navbar {
   margin-bottom: 0;
 }
-#toolbar-administration {
-  display: none;
+#toolbar-administration button {
+  height: 39px;
 }
-body {
-  margin: 0 !important;
+#toolbar-administration .toolbar-tray a {
+  color: #565656;
+}
+#toolbar-administration .toolbar-menu li:before {
+  display: none;
 }
 .links li:before,
 .menu li:before,
@@ -2512,6 +2515,12 @@ ul.inline li {
 [class*='col-md-'],
 [class*='col-lg-'] {
   min-height: 0;
+}
+body.toolbar-tray-open.toolbar-vertical .row {
+  margin: 0;
+}
+body.toolbar-tray-open.toolbar-vertical #landing-page-region .block .block-wrapper {
+  padding: 0 15px;
 }
 /* Components
 ==================================*/
@@ -2970,6 +2979,21 @@ form label {
 .main-menu .navigation .menu li a:hover {
   color: #fed136;
 }
+body.toolbar-horizontal .navbar-fixed-top,
+body.toolbar-vertical .navbar-fixed-top {
+  top: 39px;
+}
+body.toolbar-tray-open.toolbar-horizontal .navbar-fixed-top {
+  top: 79px;
+}
+body.toolbar-tray-open.toolbar-vertical .navbar-fixed-top {
+  margin-left: 15rem;
+}
+body.toolbar-tray-open .site-title {
+  position: absolute;
+  top: 0;
+  left: 73px;
+}
 .affix .main-menu a.is-active,
 .not-front .main-menu a.is-active {
   overflow: hidden;
@@ -3301,8 +3325,6 @@ form label {
 
 
 */
-/* Basic
-=================================*/
 /* Page title
 =================================== */
 h1.page-title,
@@ -3987,17 +4009,17 @@ fieldset .fieldset-description {
 }
 @media (min-width: 768px) {
   #landing-page-region .block .block-wrapper {
-    width: 728px;
+    max-width: 728px;
   }
 }
 @media (min-width: 992px) {
   #landing-page-region .block .block-wrapper {
-    width: 940px;
+    max-width: 940px;
   }
 }
 @media (min-width: 1200px) {
   #landing-page-region .block .block-wrapper {
-    width: 1170px;
+    max-width: 1170px;
   }
 }
 #landing-page-region .block .block-title {
