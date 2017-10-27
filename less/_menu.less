@@ -169,7 +169,7 @@
 }
 
 body {
-  
+
   &.toolbar-horizontal,
   &.toolbar-vertical {
     
@@ -178,26 +178,37 @@ body {
     }
   }
 
-  &.toolbar-tray-open {
+  .affix.navbar-fixed-top {
+    top: 0;
+  }
 
-    &.toolbar-horizontal {
+  @media @s {
 
-      .navbar-fixed-top {
-        top: 79px;
-      }
+    .affix.navbar-fixed-top {
+      top: 39px;
     }
-
-    &.toolbar-vertical {
-      
-      .navbar-fixed-top {
-        margin-left: 15rem;
+  
+    &.toolbar-tray-open {
+  
+      &.toolbar-horizontal {
+  
+        .navbar-fixed-top {
+          top: 79px;
+        }
       }
-    }
-
-    .site-title {
-      position: absolute;
-      top: 0;
-      left: 73px;
+  
+      &.toolbar-vertical {
+        
+        .navbar-fixed-top {
+          margin-left: 15rem;
+        }
+      }
+  
+      .site-title {
+        position: absolute;
+        top: 0;
+        left: 73px;
+      }
     }
   }
 }

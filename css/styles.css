@@ -2473,6 +2473,9 @@
 .navbar {
   margin-bottom: 0;
 }
+#toolbar-administration #toolbar-bar {
+  z-index: 1031;
+}
 #toolbar-administration button {
   height: 39px;
 }
@@ -2983,16 +2986,24 @@ body.toolbar-horizontal .navbar-fixed-top,
 body.toolbar-vertical .navbar-fixed-top {
   top: 39px;
 }
-body.toolbar-tray-open.toolbar-horizontal .navbar-fixed-top {
-  top: 79px;
-}
-body.toolbar-tray-open.toolbar-vertical .navbar-fixed-top {
-  margin-left: 15rem;
-}
-body.toolbar-tray-open .site-title {
-  position: absolute;
+body .affix.navbar-fixed-top {
   top: 0;
-  left: 73px;
+}
+@media (min-width: 768px) {
+  body .affix.navbar-fixed-top {
+    top: 39px;
+  }
+  body.toolbar-tray-open.toolbar-horizontal .navbar-fixed-top {
+    top: 79px;
+  }
+  body.toolbar-tray-open.toolbar-vertical .navbar-fixed-top {
+    margin-left: 15rem;
+  }
+  body.toolbar-tray-open .site-title {
+    position: absolute;
+    top: 0;
+    left: 73px;
+  }
 }
 .affix .main-menu a.is-active,
 .not-front .main-menu a.is-active {
@@ -4098,8 +4109,6 @@ fieldset .fieldset-description {
   Animations
 
 */
-/* Settings
-=======================*/
 /* Mixins
 ========================*/
 /* Basic classes
