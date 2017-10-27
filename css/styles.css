@@ -2519,11 +2519,8 @@ ul.inline li {
 [class*='col-lg-'] {
   min-height: 0;
 }
-body.toolbar-tray-open.toolbar-vertical .row {
-  margin: 0;
-}
-body.toolbar-tray-open.toolbar-vertical #landing-page-region .block .block-wrapper {
-  padding: 0 15px;
+body.toolbar-tray-open.toolbar-vertical {
+  width: 100%;
 }
 /* Components
 ==================================*/
