@@ -1942,9 +1942,9 @@ if (typeof jQuery === 'undefined') {
     this.$body
       .find(this.selector)
       .map(function () {
-        var $el   = $(this)
-        var href  = $el.data('target') || $el.attr('href')
-        var $href = /^#./.test(href) && $(href)
+        var $el = $(this);
+        var href = $el.data('target') || $el.attr('href');
+        var $href = /^#./.test(href) && $(href);
 
         return ($href
           && $href.length
@@ -1955,65 +1955,65 @@ if (typeof jQuery === 'undefined') {
       .each(function () {
         that.offsets.push(this[0])
         that.targets.push(this[1])
-      })
+      });
   }
 
   ScrollSpy.prototype.process = function () {
-    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
-    var scrollHeight = this.getScrollHeight()
-    var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
-    var offsets      = this.offsets
-    var targets      = this.targets
-    var activeTarget = this.activeTarget
-    var i
+    var scrollTop = this.$scrollElement.scrollTop() + this.options.offset;
+    var scrollHeight = this.getScrollHeight();
+    var maxScroll = this.options.offset + scrollHeight - this.$scrollElement.height();
+    var offsets = this.offsets;
+    var targets = this.targets;
+    var activeTarget = this.activeTarget;
+    var i;
 
     if (this.scrollHeight != scrollHeight) {
-      this.refresh()
+      this.refresh();
     }
 
     if (scrollTop >= maxScroll) {
-      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i);
     }
 
     if (activeTarget && scrollTop < offsets[0]) {
-      this.activeTarget = null
-      return this.clear()
+      this.activeTarget = null;
+      return this.clear();
     }
 
     for (i = offsets.length; i--;) {
       activeTarget != targets[i]
         && scrollTop >= offsets[i]
         && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1])
-        && this.activate(targets[i])
+        && this.activate(targets[i]);
     }
   }
 
   ScrollSpy.prototype.activate = function (target) {
-    this.activeTarget = target
+    this.activeTarget = target;
 
-    this.clear()
+    this.clear();
 
     var selector = this.selector +
       '[data-target="' + target + '"],' +
-      this.selector + '[href="' + target + '"]'
+      this.selector + '[href="' + target + '"]';
 
     var active = $(selector)
       .parents('li')
-      .addClass('active')
+      .addClass('active');
 
     if (active.parent('.dropdown-menu').length) {
       active = active
         .closest('li.dropdown')
-        .addClass('active')
+        .addClass('active');
     }
 
-    active.trigger('activate.bs.scrollspy')
+    active.trigger('activate.bs.scrollspy');
   }
 
   ScrollSpy.prototype.clear = function () {
     $(this.selector)
       .parentsUntil(this.options.target, '.active')
-      .removeClass('active')
+      .removeClass('active');
   }
 
 
@@ -2022,27 +2022,27 @@ if (typeof jQuery === 'undefined') {
 
   function Plugin(option) {
     return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.scrollspy')
-      var options = typeof option == 'object' && option
+      var $this = $(this);
+      var data = $this.data('bs.scrollspy');
+      var options = typeof option == 'object' && option;
 
-      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
-      if (typeof option == 'string') data[option]()
+      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)));
+      if (typeof option == 'string') data[option]();
     })
   }
 
-  var old = $.fn.scrollspy
+  var old = $.fn.scrollspy;
 
-  $.fn.scrollspy             = Plugin
-  $.fn.scrollspy.Constructor = ScrollSpy
+  $.fn.scrollspy = Plugin;
+  $.fn.scrollspy.Constructor = ScrollSpy;
 
 
   // SCROLLSPY NO CONFLICT
   // =====================
 
   $.fn.scrollspy.noConflict = function () {
-    $.fn.scrollspy = old
-    return this
+    $.fn.scrollspy = old;
+    return this;
   }
 
 
@@ -2051,8 +2051,8 @@ if (typeof jQuery === 'undefined') {
 
   $(window).on('load.bs.scrollspy.data-api', function () {
     $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this)
-      Plugin.call($spy, $spy.data())
+      var $spy = $(this);
+      Plugin.call($spy, $spy.data());
     })
   })
 
@@ -2075,42 +2075,42 @@ if (typeof jQuery === 'undefined') {
 
   var Tab = function (element) {
     // jscs:disable requireDollarBeforejQueryAssignment
-    this.element = $(element)
+    this.element = $(element);
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.7'
+  Tab.VERSION = '3.3.7';
 
-  Tab.TRANSITION_DURATION = 150
+  Tab.TRANSITION_DURATION = 150;
 
   Tab.prototype.show = function () {
-    var $this    = this.element
-    var $ul      = $this.closest('ul:not(.dropdown-menu)')
-    var selector = $this.data('target')
+    var $this = this.element;
+    var $ul = $this.closest('ul:not(.dropdown-menu)');
+    var selector = $this.data('target');
 
     if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+      selector = $this.attr('href');
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); // strip for ie7
     }
 
-    if ($this.parent('li').hasClass('active')) return
+    if ($this.parent('li').hasClass('active')) return;
 
-    var $previous = $ul.find('.active:last a')
+    var $previous = $ul.find('.active:last a');
     var hideEvent = $.Event('hide.bs.tab', {
       relatedTarget: $this[0]
-    })
+    });
     var showEvent = $.Event('show.bs.tab', {
       relatedTarget: $previous[0]
-    })
+    });
 
-    $previous.trigger(hideEvent)
-    $this.trigger(showEvent)
+    $previous.trigger(hideEvent);
+    $this.trigger(showEvent);
 
-    if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
+    if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return;
 
-    var $target = $(selector)
+    var $target = $(selector);
 
-    this.activate($this.closest('li'), $ul)
+    this.activate($this.closest('li'), $ul);
     this.activate($target, $target.parent(), function () {
       $previous.trigger({
         type: 'hidden.bs.tab',
@@ -2120,14 +2120,14 @@ if (typeof jQuery === 'undefined') {
         type: 'shown.bs.tab',
         relatedTarget: $previous[0]
       })
-    })
+    });
   }
 
   Tab.prototype.activate = function (element, container, callback) {
-    var $active    = container.find('> .active')
+    var $active = container.find('> .active');
     var transition = callback
       && $.support.transition
-      && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
+      && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length);
 
     function next() {
       $active
@@ -2136,18 +2136,18 @@ if (typeof jQuery === 'undefined') {
           .removeClass('active')
         .end()
         .find('[data-toggle="tab"]')
-          .attr('aria-expanded', false)
+          .attr('aria-expanded', false);
 
       element
         .addClass('active')
         .find('[data-toggle="tab"]')
-          .attr('aria-expanded', true)
+          .attr('aria-expanded', true);
 
       if (transition) {
-        element[0].offsetWidth // reflow for transition
-        element.addClass('in')
+        element[0].offsetWidth; // reflow for transition
+        element.addClass('in');
       } else {
-        element.removeClass('fade')
+        element.removeClass('fade');
       }
 
       if (element.parent('.dropdown-menu').length) {
@@ -2156,19 +2156,19 @@ if (typeof jQuery === 'undefined') {
             .addClass('active')
           .end()
           .find('[data-toggle="tab"]')
-            .attr('aria-expanded', true)
+            .attr('aria-expanded', true);
       }
 
-      callback && callback()
+      callback && callback();
     }
 
     $active.length && transition ?
       $active
         .one('bsTransitionEnd', next)
         .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
-      next()
+      next();
 
-    $active.removeClass('in')
+    $active.removeClass('in');
   }
 
 
@@ -2177,26 +2177,26 @@ if (typeof jQuery === 'undefined') {
 
   function Plugin(option) {
     return this.each(function () {
-      var $this = $(this)
-      var data  = $this.data('bs.tab')
+      var $this = $(this);
+      var data = $this.data('bs.tab');
 
-      if (!data) $this.data('bs.tab', (data = new Tab(this)))
-      if (typeof option == 'string') data[option]()
-    })
+      if (!data) $this.data('bs.tab', (data = new Tab(this)));
+      if (typeof option == 'string') data[option]();
+    });
   }
 
-  var old = $.fn.tab
+  var old = $.fn.tab;
 
-  $.fn.tab             = Plugin
-  $.fn.tab.Constructor = Tab
+  $.fn.tab = Plugin;
+  $.fn.tab.Constructor = Tab;
 
 
   // TAB NO CONFLICT
   // ===============
 
   $.fn.tab.noConflict = function () {
-    $.fn.tab = old
-    return this
+    $.fn.tab = old;
+    return this;
   }
 
 
@@ -2204,13 +2204,13 @@ if (typeof jQuery === 'undefined') {
   // ============
 
   var clickHandler = function (e) {
-    e.preventDefault()
-    Plugin.call($(this), 'show')
+    e.preventDefault();
+    Plugin.call($(this), 'show');
   }
 
   $(document)
     .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
-    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
+    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler);
 
 }(jQuery);
 
@@ -2230,101 +2230,102 @@ if (typeof jQuery === 'undefined') {
   // ======================
 
   var Affix = function (element, options) {
-    this.options = $.extend({}, Affix.DEFAULTS, options)
+    this.options = $.extend({}, Affix.DEFAULTS, options);
 
     this.$target = $(this.options.target)
       .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+      .on('click.bs.affix.data-api', $.proxy(this.checkPositionWithEventLoop, this));
 
-    this.$element     = $(element)
-    this.affixed      = null
-    this.unpin        = null
-    this.pinnedOffset = null
+    this.$element = $(element);
+    this.affixed = null;
+    this.unpin = null;
+    this.pinnedOffset = null;
 
-    this.checkPosition()
+    this.checkPosition();
   }
 
-  Affix.VERSION  = '3.3.7'
+  Affix.VERSION = '3.3.7';
 
-  Affix.RESET    = 'affix affix-top affix-bottom'
+  Affix.RESET = 'affix affix-top affix-bottom';
 
   Affix.DEFAULTS = {
     offset: 0,
     target: window
-  }
+  };
 
   Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
-    var scrollTop    = this.$target.scrollTop()
-    var position     = this.$element.offset()
-    var targetHeight = this.$target.height()
+    var scrollTop = this.$target.scrollTop();
+    var position  = this.$element.offset();
+    var targetHeight = this.$target.height();
 
-    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
+    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false;
 
     if (this.affixed == 'bottom') {
       if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
-      return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom'
+      return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom';
     }
 
-    var initializing   = this.affixed == null
-    var colliderTop    = initializing ? scrollTop : position.top
-    var colliderHeight = initializing ? targetHeight : height
+    var initializing = this.affixed == null;
+    var colliderTop = initializing ? scrollTop : position.top;
+    var colliderHeight = initializing ? targetHeight : height;
 
-    if (offsetTop != null && scrollTop <= offsetTop) return 'top'
-    if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom'
+    if (offsetTop != null && scrollTop <= offsetTop) return 'top';
+    if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom';
 
-    return false
+    return false;
   }
 
   Affix.prototype.getPinnedOffset = function () {
-    if (this.pinnedOffset) return this.pinnedOffset
-    this.$element.removeClass(Affix.RESET).addClass('affix')
-    var scrollTop = this.$target.scrollTop()
-    var position  = this.$element.offset()
-    return (this.pinnedOffset = position.top - scrollTop)
+    if (this.pinnedOffset) return this.pinnedOffset;
+    this.$element.removeClass(Affix.RESET).addClass('affix');
+    var scrollTop = this.$target.scrollTop();
+    var position  = this.$element.offset();
+
+    return (this.pinnedOffset = position.top - scrollTop);
   }
 
   Affix.prototype.checkPositionWithEventLoop = function () {
-    setTimeout($.proxy(this.checkPosition, this), 1)
+    setTimeout($.proxy(this.checkPosition, this), 1);
   }
 
   Affix.prototype.checkPosition = function () {
-    if (!this.$element.is(':visible')) return
+    if (!this.$element.is(':visible')) return;
 
-    var height       = this.$element.height()
-    var offset       = this.options.offset
-    var offsetTop    = offset.top
-    var offsetBottom = offset.bottom
-    var scrollHeight = Math.max($(document).height(), $(document.body).height())
+    var height = this.$element.height();
+    var offset = this.options.offset;
+    var offsetTop = offset.top;
+    var offsetBottom = offset.bottom;
+    var scrollHeight = Math.max($(document).height(), $(document.body).height());
 
-    if (typeof offset != 'object')         offsetBottom = offsetTop = offset
-    if (typeof offsetTop == 'function')    offsetTop    = offset.top(this.$element)
-    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element)
+    if (typeof offset != 'object') offsetBottom = offsetTop = offset;
+    if (typeof offsetTop == 'function') offsetTop = offset.top(this.$element);
+    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element);
 
-    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
+    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
 
     if (this.affixed != affix) {
       if (this.unpin != null) this.$element.css('top', '')
 
-      var affixType = 'affix' + (affix ? '-' + affix : '')
-      var e         = $.Event(affixType + '.bs.affix')
+      var affixType = 'affix' + (affix ? '-' + affix : '');
+      var e = $.Event(affixType + '.bs.affix');
 
-      this.$element.trigger(e)
+      this.$element.trigger(e);
 
-      if (e.isDefaultPrevented()) return
+      if (e.isDefaultPrevented()) return;
 
-      this.affixed = affix
-      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null
+      this.affixed = affix;
+      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null;
 
       this.$element
         .removeClass(Affix.RESET)
         .addClass(affixType)
-        .trigger(affixType.replace('affix', 'affixed') + '.bs.affix')
+        .trigger(affixType.replace('affix', 'affixed') + '.bs.affix');
     }
 
     if (affix == 'bottom') {
       this.$element.offset({
         top: scrollHeight - height - offsetBottom
-      })
+      });
     }
   }
 
@@ -2334,27 +2335,27 @@ if (typeof jQuery === 'undefined') {
 
   function Plugin(option) {
     return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.affix')
-      var options = typeof option == 'object' && option
+      var $this = $(this);
+      var data = $this.data('bs.affix');
+      var options = typeof option == 'object' && option;
 
-      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
-      if (typeof option == 'string') data[option]()
+      if (!data) $this.data('bs.affix', (data = new Affix(this, options)));
+      if (typeof option == 'string') data[option]();
     })
   }
 
-  var old = $.fn.affix
+  var old = $.fn.affix;
 
-  $.fn.affix             = Plugin
-  $.fn.affix.Constructor = Affix
+  $.fn.affix  = Plugin;
+  $.fn.affix.Constructor = Affix;
 
 
   // AFFIX NO CONFLICT
   // =================
 
   $.fn.affix.noConflict = function () {
-    $.fn.affix = old
-    return this
+    $.fn.affix = old;
+    return this;
   }
 
 
@@ -2363,15 +2364,15 @@ if (typeof jQuery === 'undefined') {
 
   $(window).on('load', function () {
     $('[data-spy="affix"]').each(function () {
-      var $spy = $(this)
-      var data = $spy.data()
+      var $spy = $(this);
+      var data = $spy.data();
 
-      data.offset = data.offset || {}
+      data.offset = data.offset || {};
 
-      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
-      if (data.offsetTop    != null) data.offset.top    = data.offsetTop
+      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom;
+      if (data.offsetTop    != null) data.offset.top = data.offsetTop;
 
-      Plugin.call($spy, data)
+      Plugin.call($spy, data);
     })
   })
 
