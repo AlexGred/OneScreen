@@ -2264,7 +2264,7 @@ if (typeof jQuery === 'undefined') {
 
       if (activeTarget !== (i = targets[targets.length - 1])) {
         return this.activate(i);
-      } 
+      }
       else {
         return;
       }
