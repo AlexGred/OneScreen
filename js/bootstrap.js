@@ -374,9 +374,11 @@ if (typeof jQuery === 'undefined') {
       this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this));
     }
 
-    this.options.pause === 'hover' && !('ontouchstart' in document.documentElement) && this.$element
-      .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
-      .on('mouseleave.bs.carousel', $.proxy(this.cycle, this));
+    if ((this.options.pause === 'hover') && !('ontouchstart' in document.documentElement)) {
+      this.$element
+        .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
+        .on('mouseleave.bs.carousel', $.proxy(this.cycle, this));
+    }
   };
 
   Carousel.VERSION = '3.3.7';
@@ -404,7 +406,9 @@ if (typeof jQuery === 'undefined') {
   };
 
   Carousel.prototype.cycle = function (e) {
-    e || (this.paused = false);
+    if (e) {
+      (this.paused = false);
+    }
 
     if (this.interval) {
       clearInterval(this.interval);
@@ -453,7 +457,9 @@ if (typeof jQuery === 'undefined') {
   };
 
   Carousel.prototype.pause = function (e) {
-    e || (this.paused = true);
+    if (e) {
+      (this.paused = true);
+    }
 
     if (this.$element.find('.next, .prev').length && $.support.transition) {
       this.$element.trigger($.support.transition.end);
@@ -517,7 +523,7 @@ if (typeof jQuery === 'undefined') {
     var slidEvent = $.Event('slid.bs.carousel', {relatedTarget: relatedTarget, direction: direction}); // yes, "slid"
     if ($.support.transition && this.$element.hasClass('slide')) {
       $next.addClass(type);
-      $next[0].offsetWidth; // force reflow
+      //$next[0].offsetWidth; // force reflow
       $active.addClass(direction);
       $next.addClass(direction);
       $active
@@ -695,7 +701,9 @@ if (typeof jQuery === 'undefined') {
 
     if (actives && actives.length) {
       Plugin.call(actives, 'hide');
-      activesData || actives.data('bs.collapse', null);
+      if (activesData) {
+        actives.data('bs.collapse', null);
+      }
     }
 
     var dimension = this.dimension();
@@ -1150,7 +1158,7 @@ if (typeof jQuery === 'undefined') {
       that.adjustDialog();
 
       if (transition) {
-        that.$element[0].offsetWidth; // force reflow
+        //that.$element[0].offsetWidth; // force reflow
       }
 
       that.$element.addClass('in');
@@ -1289,7 +1297,7 @@ if (typeof jQuery === 'undefined') {
       }, this));
 
       if (doAnimate) {
-        this.$backdrop[0].offsetWidth;
+        //this.$backdrop[0].offsetWidth;
       } // force reflow
 
       this.$backdrop.addClass('in');
