@@ -1203,10 +1203,10 @@ if (typeof jQuery === 'undefined') {
       this.$element
         .one('bsTransitionEnd', $.proxy(this.hideModal, this))
         .emulateTransitionEnd(Modal.TRANSITION_DURATION);
-     }
-     else {
+    }
+    else {
       this.hideModal();
-     }
+    }
   };
 
   Modal.prototype.enforceFocus = function () {
@@ -1298,11 +1298,14 @@ if (typeof jQuery === 'undefined') {
         return;
       }
 
-      doAnimate ?
+      if (doAnimate) {
         this.$backdrop
           .one('bsTransitionEnd', callback)
-          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION);
+      }
+      else {
         callback();
+      }
 
     }
     else if (!this.isShown && this.$backdrop) {
@@ -1310,7 +1313,9 @@ if (typeof jQuery === 'undefined') {
 
       var callbackRemove = function () {
         that.removeBackdrop();
-        callback && callback();
+        if (callback) {
+          callback();
+        }
       };
       if ($.support.transition && this.$element.hasClass('fade')) {
         this.$backdrop
@@ -1435,7 +1440,9 @@ if (typeof jQuery === 'undefined') {
         return;
       } // only register focus restorer if modal will actually get shown
       $target.one('hidden.bs.modal', function () {
-        $this.is(':visible') && $this.trigger('focus');
+        if ($this.is(':visible')) {
+          $this.trigger('focus');
+        }
       });
     });
     Plugin.call($target, option, this);
@@ -1520,9 +1527,12 @@ if (typeof jQuery === 'undefined') {
       }
     }
 
-    this.options.selector ?
-      (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''})) :
+    if (this.options.selector) {
+      (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''}));
+    }
+    else {
       this.fixTitle();
+    }
   };
 
   Tooltip.prototype.getDefaults = function () {
@@ -1546,11 +1556,13 @@ if (typeof jQuery === 'undefined') {
     var options = {};
     var defaults = this.getDefaults();
 
-    this._options && $.each(this._options, function (key, value) {
-      if (defaults[key] !== value) {
-        options[key] = value;
-      }
-    });
+    if (this._options) {
+      $.each(this._options, function (key, value) {
+        if (defaults[key] !== value) {
+          options[key] = value;
+        }
+      });
+    }
 
     return options;
   };
@@ -1707,11 +1719,14 @@ if (typeof jQuery === 'undefined') {
         }
       };
 
-      $.support.transition && this.$tip.hasClass('fade') ?
+      if ($.support.transition && this.$tip.hasClass('fade')) {
         $tip
           .one('bsTransitionEnd', complete)
-          .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+          .emulateTransitionEnd(Tooltip.TRANSITION_DURATION);
+      }
+      else {
         complete();
+      }
     }
   };
 
@@ -1801,7 +1816,9 @@ if (typeof jQuery === 'undefined') {
           .removeAttr('aria-describedby')
           .trigger('hidden.bs.' + that.type);
       }
-      callback && callback();
+      if (callback) {
+        callback();
+      }
     }
 
     this.$element.trigger(e);
@@ -1812,11 +1829,14 @@ if (typeof jQuery === 'undefined') {
 
     $tip.removeClass('in');
 
-    $.support.transition && $tip.hasClass('fade') ?
+    if ($.support.transition && $tip.hasClass('fade')) {
       $tip
         .one('bsTransitionEnd', complete)
-        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION);
+    }
+    else {
       complete();
+    }
 
     this.hoverState = null;
 
@@ -1961,7 +1981,12 @@ if (typeof jQuery === 'undefined') {
       }
     }
     else {
-      self.tip().hasClass('in') ? self.leave(self) : self.enter(self);
+      if (self.tip().hasClass('in')) {
+        self.leave(self);
+      }
+      else {
+        self.enter(self);
+      }
     }
   };
 
@@ -2419,14 +2444,19 @@ if (typeof jQuery === 'undefined') {
             .attr('aria-expanded', true);
       }
 
-      callback && callback();
+      if (callback) {
+        callback();
+      }
     }
 
-    $active.length && transition ?
+    if ($active.length && transition) {
       $active
         .one('bsTransitionEnd', next)
-        .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
+        .emulateTransitionEnd(Tab.TRANSITION_DURATION);
+    }
+    else {
       next();
+    }
 
     $active.removeClass('in');
   };
