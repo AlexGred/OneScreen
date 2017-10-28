@@ -523,7 +523,7 @@ if (typeof jQuery === 'undefined') {
     var slidEvent = $.Event('slid.bs.carousel', {relatedTarget: relatedTarget, direction: direction}); // yes, "slid"
     if ($.support.transition && this.$element.hasClass('slide')) {
       $next.addClass(type);
-      //$next[0].offsetWidth; // force reflow
+      // $next[0].offsetWidth; // force reflow
       $active.addClass(direction);
       $next.addClass(direction);
       $active
@@ -1158,7 +1158,7 @@ if (typeof jQuery === 'undefined') {
       that.adjustDialog();
 
       if (transition) {
-        //that.$element[0].offsetWidth; // force reflow
+        // that.$element[0].offsetWidth; // force reflow
       }
 
       that.$element.addClass('in');
@@ -1297,7 +1297,7 @@ if (typeof jQuery === 'undefined') {
       }, this));
 
       if (doAnimate) {
-        //this.$backdrop[0].offsetWidth;
+        // this.$backdrop[0].offsetWidth;
       } // force reflow
 
       this.$backdrop.addClass('in');
@@ -1691,7 +1691,12 @@ if (typeof jQuery === 'undefined') {
         .addClass(placement)
         .data('bs.' + this.type, this);
 
-      this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element);
+      if (this.options.container) {
+        $tip.appendTo(this.options.container);
+      }
+      else {
+        $tip.insertAfter(this.$element);
+      }
       this.$element.trigger('inserted.bs.' + this.type);
 
       var pos = this.getPosition();
@@ -2256,7 +2261,13 @@ if (typeof jQuery === 'undefined') {
     }
 
     if (scrollTop >= maxScroll) {
-      return activeTarget !== (i = targets[targets.length - 1]) && this.activate(i);
+
+      if (activeTarget !== (i = targets[targets.length - 1])) {
+        return this.activate(i);
+      } 
+      else {
+        return;
+      }
     }
 
     if (activeTarget && scrollTop < offsets[0]) {
@@ -2436,7 +2447,7 @@ if (typeof jQuery === 'undefined') {
           .attr('aria-expanded', true);
 
       if (transition) {
-        element[0].offsetWidth; // reflow for transition
+        // element[0].offsetWidth; // reflow for transition
         element.addClass('in');
       }
       else {
