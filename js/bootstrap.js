@@ -370,7 +370,9 @@ if (typeof jQuery === 'undefined') {
     this.$active = null;
     this.$items = null;
 
-    this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this));
+    if (this.options.keyboard) {
+      this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this));
+    }
 
     this.options.pause === 'hover' && !('ontouchstart' in document.documentElement) && this.$element
       .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
@@ -498,12 +500,16 @@ if (typeof jQuery === 'undefined') {
 
     this.sliding = true;
 
-    isCycling && this.pause();
+    if (isCycling) {
+      this.pause();
+    }
 
     if (this.$indicators.length) {
       this.$indicators.find('.active').removeClass('active');
       var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)]);
-      $nextIndicator && $nextIndicator.addClass('active');
+      if ($nextIndicator) {
+        $nextIndicator.addClass('active');
+      }
     }
 
     var slidEvent = $.Event('slid.bs.carousel', {relatedTarget: relatedTarget, direction: direction}); // yes, "slid"
@@ -530,7 +536,9 @@ if (typeof jQuery === 'undefined') {
       this.$element.trigger(slidEvent);
     }
 
-    isCycling && this.cycle();
+    if (isCycling) {
+      this.cycle();
+    }
 
     return this;
   };
@@ -1149,13 +1157,16 @@ if (typeof jQuery === 'undefined') {
 
       var e = $.Event('shown.bs.modal', {relatedTarget: _relatedTarget});
 
-      transition ?
+      if (transition) {
         that.$dialog // wait for modal to slide in
           .one('bsTransitionEnd', function () {
             that.$element.trigger('focus').trigger(e);
           })
-          .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
-        that.$element.trigger('focus').trigger(e);
+          .emulateTransitionEnd(Modal.TRANSITION_DURATION);
+        }
+        else {
+          that.$element.trigger('focus').trigger(e);
+        }
     });
   };
 
@@ -1186,11 +1197,14 @@ if (typeof jQuery === 'undefined') {
 
     this.$dialog.off('mousedown.dismiss.bs.modal');
 
-    $.support.transition && this.$element.hasClass('fade') ?
+    if ($.support.transition && this.$element.hasClass('fade')) {
       this.$element
         .one('bsTransitionEnd', $.proxy(this.hideModal, this))
-        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+        .emulateTransitionEnd(Modal.TRANSITION_DURATION);
+     }
+     else {
       this.hideModal();
+     }
   };
 
   Modal.prototype.enforceFocus = function () {
@@ -1260,9 +1274,12 @@ if (typeof jQuery === 'undefined') {
         if (e.target !== e.currentTarget) {
           return;
         }
-        this.options.backdrop === 'static'
-          ? this.$element[0].focus()
-          : this.hide();
+        if (this.options.backdrop === 'static') {
+          this.$element[0].focus();
+        }
+        else {
+          this.hide();
+        }
       }, this));
 
       if (doAnimate) {
@@ -1933,7 +1950,8 @@ if (typeof jQuery === 'undefined') {
       else {
         self.leave(self);
       }
-    } else {
+    }
+    else {
       self.tip().hasClass('in') ? self.leave(self) : self.enter(self);
     }
   };
