@@ -406,7 +406,9 @@ if (typeof jQuery === 'undefined') {
   Carousel.prototype.cycle = function (e) {
     e || (this.paused = false);
 
-    this.interval && clearInterval(this.interval);
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
 
     this.options.interval
       && !this.paused
@@ -1163,10 +1165,10 @@ if (typeof jQuery === 'undefined') {
             that.$element.trigger('focus').trigger(e);
           })
           .emulateTransitionEnd(Modal.TRANSITION_DURATION);
-        }
-        else {
-          that.$element.trigger('focus').trigger(e);
-        }
+      }
+      else {
+        that.$element.trigger('focus').trigger(e);
+      }
     });
   };
 
@@ -1222,7 +1224,9 @@ if (typeof jQuery === 'undefined') {
   Modal.prototype.escape = function () {
     if (this.isShown && this.options.keyboard) {
       this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
-        e.which === 27 && this.hide();
+        if (e.which === 27) {
+          this.hide();
+        }
       }, this));
     }
     else if (!this.isShown) {
@@ -1251,7 +1255,9 @@ if (typeof jQuery === 'undefined') {
   };
 
   Modal.prototype.removeBackdrop = function () {
-    this.$backdrop && this.$backdrop.remove();
+    if (this.$backdrop) {
+      this.$backdrop.remove();
+    }
     this.$backdrop = null;
   };
 
@@ -1306,11 +1312,14 @@ if (typeof jQuery === 'undefined') {
         that.removeBackdrop();
         callback && callback();
       };
-      $.support.transition && this.$element.hasClass('fade') ?
+      if ($.support.transition && this.$element.hasClass('fade')) {
         this.$backdrop
           .one('bsTransitionEnd', callbackRemove)
-          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION);
+      }
+      else {
         callbackRemove();
+      }
 
     }
     else if (callback) {
