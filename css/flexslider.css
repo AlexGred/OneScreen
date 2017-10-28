@@ -22,10 +22,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
-} 
+}
 
 /* FlexSlider Necessary Styles
-*********************************/ 
+*********************************/
 .flexslider {
   margin: 0;
   padding: 0;
@@ -50,10 +50,10 @@
   visibility: hidden;
   line-height: 0;
   height: 0;
-} 
+}
 html[xmlns] .slides {
   display: block;
-} 
+}
 * html .slides {
   height: 1%;
 }
@@ -102,7 +102,8 @@ html[xmlns] .slides {
   margin: -50px 0 0;
   display: block;
   background: url(../images/bg_direction_nav.png) no-repeat 0 0;
-  position: absolute; top: 50%;
+  position: absolute;
+  top: 50%;
   z-index: 110;
   cursor: pointer;
   text-indent: -9999px;
@@ -114,7 +115,7 @@ html[xmlns] .slides {
 .flex-direction-nav .flex-prev {
   left: 0px;
 }
-.flexslider:hover .flex-next:hover, 
+.flexslider:hover .flex-next:hover,
 .flexslider:hover .flex-prev:hover {
   background-position-y: -100px;
 }
@@ -155,7 +156,7 @@ html[xmlns] .slides {
   background: #333;
   background: rgba(0,0,0,0.7);
 }
-.flex-control-paging li a.flex-active { 
+.flex-control-paging li a.flex-active {
   background: #000;
   background: rgba(0,0,0,0.9);
   cursor: default;
