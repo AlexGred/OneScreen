@@ -1245,7 +1245,7 @@ if (typeof jQuery === 'undefined') {
         if (e.target !== e.currentTarget) {
           return;
         }
-        this.options.backdrop == 'static'
+        this.options.backdrop === 'static'
           ? this.$element[0].focus()
           : this.hide();
       }, this));
