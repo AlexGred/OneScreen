@@ -247,7 +247,9 @@ if (typeof jQuery === 'undefined') {
     if ($parent.length) {
       var $input = this.$element.find('input');
       if ($input.prop('type') == 'radio') {
-        if ($input.prop('checked')) changed = false;
+        if ($input.prop('checked')) {
+          changed = false;
+        }
         $parent.find('.active').removeClass('active');
         this.$element.addClass('active');
       } else if ($input.prop('type') == 'checkbox') {
@@ -424,7 +426,9 @@ if (typeof jQuery === 'undefined') {
       return;
     }
 
-    if (this.sliding) return this.$element.one('slid.bs.carousel', function () { that.to(pos); }); // yes, "slid"
+    if (this.sliding) {
+      return this.$element.one('slid.bs.carousel', function () { that.to(pos); });
+    } // yes, "slid"
     if (activeIndex == pos) {
       return this.pause().cycle();
     }
@@ -871,7 +875,9 @@ if (typeof jQuery === 'undefined') {
   }
 
   function clearMenus(e) {
-    if (e && e.which === 3) return;
+    if (e && e.which === 3) {
+      return;
+    }
     $(backdrop).remove();
     $(toggle).each(function () {
       var $this = $(this);
@@ -1236,7 +1242,9 @@ if (typeof jQuery === 'undefined') {
           this.ignoreBackdropClick = false;
           return;
         }
-        if (e.target !== e.currentTarget) return;
+        if (e.target !== e.currentTarget) {
+          return;
+        }
         this.options.backdrop == 'static'
           ? this.$element[0].focus()
           : this.hide();
@@ -1572,7 +1580,9 @@ if (typeof jQuery === 'undefined') {
     }
 
     self.timeout = setTimeout(function () {
-      if (self.hoverState == 'out') self.hide();
+      if (self.hoverState == 'out') {
+        self.hide();
+      }
     }, self.options.delay.hide);
   };
 
@@ -1851,7 +1861,9 @@ if (typeof jQuery === 'undefined') {
   };
 
   Tooltip.prototype.getUID = function (prefix) {
-    do prefix += ~~(Math.random() * 1000000);
+    do {
+      prefix += ~~(Math.random() * 1000000);
+    }
     while (document.getElementById(prefix));
     return prefix;
   };
@@ -1894,8 +1906,12 @@ if (typeof jQuery === 'undefined') {
 
     if (e) {
       self.inState.click = !self.inState.click;
-      if (self.isInStateTrue()) self.enter(self);
-      else self.leave(self);
+      if (self.isInStateTrue()) {
+        self.enter(self);
+      }
+      else {
+        self.leave(self);
+      }
     } else {
       self.tip().hasClass('in') ? self.leave(self) : self.enter(self);
     }
@@ -1973,7 +1989,7 @@ if (typeof jQuery === 'undefined') {
   };
 
   if (!$.fn.tooltip) {
-    throw new Error('Popover requires tooltip.js')
+    throw new Error('Popover requires tooltip.js');
   }
 
   Popover.VERSION = '3.3.7';
@@ -1983,7 +1999,7 @@ if (typeof jQuery === 'undefined') {
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
-  })
+  });
 
 
   // NOTE: POPOVER EXTENDS tooltip.js
@@ -1995,7 +2011,7 @@ if (typeof jQuery === 'undefined') {
 
   Popover.prototype.getDefaults = function () {
     return Popover.DEFAULTS;
-  }
+  };
 
   Popover.prototype.setContent = function () {
     var $tip = this.tip();
@@ -2457,10 +2473,14 @@ if (typeof jQuery === 'undefined') {
     var position = this.$element.offset();
     var targetHeight = this.$target.height();
 
-    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false;
+    if (offsetTop != null && this.affixed == 'top') {
+      return scrollTop < offsetTop ? 'top' : false;
+    }
 
     if (this.affixed == 'bottom') {
-      if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom';
+      if (offsetTop != null) {
+        return (scrollTop + this.unpin <= position.top) ? false : 'bottom';
+      }
       return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom';
     }
 
@@ -2484,7 +2504,7 @@ if (typeof jQuery === 'undefined') {
     }
     this.$element.removeClass(Affix.RESET).addClass('affix');
     var scrollTop = this.$target.scrollTop();
-    var position  = this.$element.offset();
+    var position = this.$element.offset();
 
     return (this.pinnedOffset = position.top - scrollTop);
   };
