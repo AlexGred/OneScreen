@@ -120,8 +120,8 @@ html[xmlns] .slides {
   background-position-y: -100px;
 }
 .flex-direction-nav .flex-disabled {
-  opacity: .3!important;
-  filter:alpha(opacity=30);
+  opacity: .3 !important;
+  filter: alpha(opacity=30);
   cursor: default;
 }
 
@@ -141,7 +141,7 @@ html[xmlns] .slides {
 .flex-control-paging li a {
   width: 11px;
   height: 11px;
-  display: block; 
+  display: block;
   background: #666;
   background: rgba(0,0,0,0.5);
   cursor: pointer;
