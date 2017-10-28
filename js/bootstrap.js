@@ -140,11 +140,20 @@ if (typeof jQuery === 'undefined') {
       $parent.detach().trigger('closed.bs.alert').remove();
     }
 
-    $.support.transition && $parent.hasClass('fade') ?
+/*     $.support.transition && $parent.hasClass('fade') ?
       $parent
         .one('bsTransitionEnd', removeElement)
         .emulateTransitionEnd(Alert.TRANSITION_DURATION) :
+      removeElement(); */
+
+    if ($.support.transition && $parent.hasClass('fade')) {
+      $parent
+        .one('bsTransitionEnd', removeElement)
+        .emulateTransitionEnd(Alert.TRANSITION_DURATION);
+    }
+    else {
       removeElement();
+    }
   };
 
 
@@ -233,7 +242,7 @@ if (typeof jQuery === 'undefined') {
       if (state === 'loadingText') {
         this.isLoading = true;
         $el.addClass(d).attr(d, d).prop(d, true);
-      } 
+      }
       else if (this.isLoading) {
         this.isLoading = false;
         $el.removeClass(d).removeAttr(d).prop(d, false);
@@ -253,7 +262,8 @@ if (typeof jQuery === 'undefined') {
         }
         $parent.find('.active').removeClass('active');
         this.$element.addClass('active');
-      } else if ($input.prop('type') === 'checkbox') {
+      }
+      else if ($input.prop('type') === 'checkbox') {
         if (($input.prop('checked')) !== this.$element.hasClass('active')) {
           changed = false;
         }
@@ -263,7 +273,8 @@ if (typeof jQuery === 'undefined') {
       if (changed) {
         $input.trigger('change');
       }
-    } else {
+    }
+    else {
       this.$element.attr('aria-pressed', !this.$element.hasClass('active'));
       this.$element.toggleClass('active');
     }
@@ -511,7 +522,8 @@ if (typeof jQuery === 'undefined') {
           }, 0);
         })
         .emulateTransitionEnd(Carousel.TRANSITION_DURATION);
-    } else {
+    }
+    else {
       $active.removeClass('active');
       $next.addClass('active');
       this.sliding = false;
@@ -627,7 +639,8 @@ if (typeof jQuery === 'undefined') {
 
     if (this.options.parent) {
       this.$parent = this.getParent();
-    } else {
+    }
+    else {
       this.addAriaAndCollapsedClass(this.$element, this.$trigger);
     }
 
@@ -1197,7 +1210,8 @@ if (typeof jQuery === 'undefined') {
       this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
         e.which === 27 && this.hide();
       }, this));
-    } else if (!this.isShown) {
+    }
+    else if (!this.isShown) {
       this.$element.off('keydown.dismiss.bs.modal');
     }
   };
@@ -1205,7 +1219,8 @@ if (typeof jQuery === 'undefined') {
   Modal.prototype.resize = function () {
     if (this.isShown) {
       $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this));
-    } else {
+    }
+    else {
       $(window).off('resize.bs.modal');
     }
   };
@@ -1266,7 +1281,8 @@ if (typeof jQuery === 'undefined') {
           .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
         callback();
 
-    } else if (!this.isShown && this.$backdrop) {
+    }
+    else if (!this.isShown && this.$backdrop) {
       this.$backdrop.removeClass('in');
 
       var callbackRemove = function () {
@@ -1279,7 +1295,8 @@ if (typeof jQuery === 'undefined') {
           .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
         callbackRemove();
 
-    } else if (callback) {
+    }
+    else if (callback) {
       callback();
     }
   };
@@ -1467,7 +1484,8 @@ if (typeof jQuery === 'undefined') {
 
       if (trigger === 'click') {
         this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this));
-      } else if (trigger !== 'manual') {
+      }
+      else if (trigger !== 'manual') {
         var eventIn = trigger === 'hover' ? 'mouseenter' : 'focusin';
         var eventOut = trigger === 'hover' ? 'mouseleave' : 'focusout';
 
@@ -1833,15 +1851,18 @@ if (typeof jQuery === 'undefined') {
       var bottomEdgeOffset = pos.top + viewportPadding - viewportDimensions.scroll + actualHeight;
       if (topEdgeOffset < viewportDimensions.top) { // top overflow
         delta.top = viewportDimensions.top - topEdgeOffset;
-      } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
+      }
+      else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
         delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset;
       }
-    } else {
+    }
+    else {
       var leftEdgeOffset = pos.left - viewportPadding;
       var rightEdgeOffset = pos.left + viewportPadding + actualWidth;
       if (leftEdgeOffset < viewportDimensions.left) { // left overflow
         delta.left = viewportDimensions.left - leftEdgeOffset;
-      } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
+      }
+      else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
         delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset;
       }
     }
@@ -2357,7 +2378,8 @@ if (typeof jQuery === 'undefined') {
       if (transition) {
         element[0].offsetWidth; // reflow for transition
         element.addClass('in');
-      } else {
+      }
+      else {
         element.removeClass('fade');
       }
 
