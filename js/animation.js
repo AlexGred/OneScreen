@@ -1,25 +1,27 @@
+'use strict'
+
 (function($) {
 
   $(document).ready(function() {
 
     $('#landing-page-region').viewportChecker({
       classToAdd: 'ta-visible animated fadeIn',
-      offset: 150    
+      offset: 150
     });
 
     $('#main-content').viewportChecker({
       classToAdd: 'ta-visible animated fadeIn',
-      offset: 150    
+      offset: 150
     });
 
     $('#bottom').viewportChecker({
       classToAdd: 'ta-visible animated fadeIn',
-      offset: 100    
+      offset: 100 
     });
 
     $('#footer').viewportChecker({
       classToAdd: 'ta-visible animated fadeIn',
-      offset: 50    
+      offset: 50
     });
 
     $('#navigation-bar').addClass('ta-visible animated fadeInDown');
