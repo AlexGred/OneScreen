@@ -233,7 +233,8 @@ if (typeof jQuery === 'undefined') {
       if (state === 'loadingText') {
         this.isLoading = true;
         $el.addClass(d).attr(d, d).prop(d, true);
-      } else if (this.isLoading) {
+      } 
+      else if (this.isLoading) {
         this.isLoading = false;
         $el.removeClass(d).removeAttr(d).prop(d, false);
       }
@@ -745,8 +746,7 @@ if (typeof jQuery === 'undefined') {
       return complete.call(this);
     }
 
-    this.$element
-      [dimension](0)
+    this.$element[dimension](0)
       .one('bsTransitionEnd', $.proxy(complete, this))
       .emulateTransitionEnd(Collapse.TRANSITION_DURATION);
   };
