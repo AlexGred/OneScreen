@@ -519,7 +519,9 @@
             $obj = slider.viewport;
           }
           if (dur) {
-            $obj.animate({'height': slider.slides.eq(slider.animatingTo).height()}, dur);
+            $obj.animate({
+              'height': slider.slides.eq(slider.animatingTo).height()
+            }, dur);
           }
           else {
             $obj.height(slider.slides.eq(slider.animatingTo).height());
@@ -654,8 +656,14 @@
             slider.slides.eq(target).fadeIn(vars.animationSpeed, vars.easing, slider.wrapup);
           }
           else {
-            slider.slides.eq(slider.currentSlide).css({'opacity': 0, 'zIndex': 1});
-            slider.slides.eq(target).css({'opacity': 1, 'zIndex': 2});
+            slider.slides.eq(slider.currentSlide).css({
+              'opacity': 0,
+              'zIndex': 1
+            });
+            slider.slides.eq(target).css({
+              'opacity': 1,
+              'zIndex': 2
+            });
             slider.slides.unbind('webkitTransitionEnd transitionend');
             slider.slides.eq(slider.currentSlide).bind('webkitTransitionEnd transitionend', function () {
               // API: after() animation Callback
@@ -747,22 +755,22 @@
       var target = (function () {
         var posCheck = (pos) ? pos : ((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo;
         var posCalc = (function () {
-            if (carousel) {
-              return (special === 'setTouch') ? pos :
-                      (reverse && slider.animatingTo === slider.last) ? 0 :
-                      (reverse) ? slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo) :
-                      (slider.animatingTo === slider.last) ? slider.limit : posCheck;
+          if (carousel) {
+            return (special === 'setTouch') ? pos :
+                    (reverse && slider.animatingTo === slider.last) ? 0 :
+                    (reverse) ? slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo) :
+                    (slider.animatingTo === slider.last) ? slider.limit : posCheck;
+          }
+          else {
+            switch (special) {
+              case 'setTotal': return (reverse) ? ((slider.count - 1) - slider.currentSlide + slider.cloneOffset) * pos : (slider.currentSlide + slider.cloneOffset) * pos;
+              case 'setTouch': return (reverse) ? pos : pos;
+              case 'jumpEnd': return (reverse) ? pos : slider.count * pos;
+              case 'jumpStart': return (reverse) ? slider.count * pos : pos;
+              default: return pos;
             }
-            else {
-              switch (special) {
-                case 'setTotal': return (reverse) ? ((slider.count - 1) - slider.currentSlide + slider.cloneOffset) * pos : (slider.currentSlide + slider.cloneOffset) * pos;
-                case 'setTouch': return (reverse) ? pos : pos;
-                case 'jumpEnd': return (reverse) ? pos : slider.count * pos;
-                case 'jumpStart': return (reverse) ? slider.count * pos : pos;
-                default: return pos;
-              }
-            }
-          }());
+          }
+        }());
         return (posCalc * -1) + 'px';
       }());
 
@@ -795,7 +803,10 @@
         var arr;
 
         if (type === 'init') {
-          slider.viewport = $('<div class="' + namespace + 'viewport"></div>').css({'overflow': 'hidden', 'position': 'relative'}).appendTo(slider).append(slider.container);
+          slider.viewport = $('<div class="' + namespace + 'viewport"></div>').css({
+            'overflow': 'hidden',
+            'position': 'relative'
+          }).appendTo(slider).append(slider.container);
           // INFINITE LOOP:
           slider.cloneCount = 0;
           slider.cloneOffset = 0;
@@ -823,7 +834,9 @@
         if (vertical && !carousel) {
           slider.container.height((slider.count + slider.cloneCount) * 200 + '%').css('position', 'absolute').width('100%');
           setTimeout(function () {
-            slider.newSlides.css({'display': 'block'});
+            slider.newSlides.css({
+              'display': 'block'
+            });
             slider.doMath();
             slider.viewport.height(slider.h);
             slider.setProps(sliderOffset * slider.h, 'init');
@@ -834,7 +847,11 @@
           slider.setProps(sliderOffset * slider.computedW, 'init');
           setTimeout(function () {
             slider.doMath();
-            slider.newSlides.css({'width': slider.computedW, 'float': 'left', 'display': 'block'});
+            slider.newSlides.css({
+              'width': slider.computedW,
+              'float': 'left',
+              'display': 'block'
+            });
             // SMOOTH HEIGHT:
             if (vars.smoothHeight) {
               methods.smoothHeight();
@@ -843,13 +860,26 @@
         }
       }
       else { // FADE:
-        slider.slides.css({'width': '100%', 'float': 'left', 'marginRight': '-100%', 'position': 'relative'});
+        slider.slides.css({
+          'width': '100%',
+          'float': 'left',
+          'marginRight': '-100%',
+          'position': 'relative'
+        });
         if (type === 'init') {
           if (!touch) {
             slider.slides.eq(slider.currentSlide).fadeIn(vars.animationSpeed, vars.easing);
           }
           else {
-            slider.slides.css({'opacity': 0, 'display': 'block', 'webkitTransition': 'opacity' + vars.animationSpeed / 1000 + 's ease', 'zIndex': 1}).eq(slider.currentSlide).css({'opacity': 1, 'zIndex': 2});
+            slider.slides.css({
+              'opacity': 0,
+              'display': 'block',
+              'webkitTransition': 'opacity' + vars.animationSpeed / 1000 + 's ease',
+              'zIndex': 1
+            }).eq(slider.currentSlide).css({
+              'opacity': 1,
+              'zIndex': 2
+            });
           }
         }
         // SMOOTH HEIGHT:
@@ -885,7 +915,7 @@
         slider.visible = Math.floor(slider.w / (slider.itemW + slideMargin));
         slider.move = (vars.move > 0 && vars.move < slider.visible) ? vars.move : slider.visible;
         slider.pagingCount = Math.ceil(((slider.count - slider.visible) / slider.move) + 1);
-        slider.last =  slider.pagingCount - 1;
+        slider.last = slider.pagingCount - 1;
         slider.limit = (slider.pagingCount === 1) ? 0 : (vars.itemWidth > slider.w) ? ((slider.itemW + (slideMargin * 2)) * slider.count) - slider.w - slideMargin : ((slider.itemW + slideMargin) * slider.count) - slider.w - slideMargin;
       }
       else {
@@ -938,10 +968,20 @@
 
       // append new slide
       if (vertical && reverse) {
-        (pos !== undefined) ? slider.slides.eq(slider.count - pos).after($obj) : slider.container.prepend($obj);
+        if (pos !== undefined) {
+          slider.slides.eq(slider.count - pos).after($obj);
+        }
+        else {
+          slider.container.prepend($obj);
+        }
       }
       else {
-        (pos !== undefined) ? slider.slides.eq(pos).before($obj) : slider.container.append($obj);
+        if (pos !== undefined) {
+          slider.slides.eq(pos).before($obj);
+        }
+        else {
+          slider.container.append($obj);
+        }
       }
 
       // update currentSlide, animatingTo, controlNav, and directionNav
@@ -967,7 +1007,12 @@
         $(obj, slider.slides).remove();
       }
       else {
-        (vertical && reverse) ? slider.slides.eq(slider.last).remove() : slider.slides.eq(obj).remove();
+        if (vertical && reverse) {
+          slider.slides.eq(slider.last).remove();
+        }
+        else {
+          slider.slides.eq(obj).remove();
+        }
       }
 
       // update currentSlide, animatingTo, controlNav, and directionNav
