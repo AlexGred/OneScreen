@@ -441,7 +441,7 @@
                 }
                 else {
                   if (carousel) {
-                    offset =  ((slider.itemW + vars.itemMargin) * slider.move) * slider.currentSlide;
+                    offset = ((slider.itemW + vars.itemMargin) * slider.move) * slider.currentSlide;
                   }
                   else {
                     if (reverse) {
@@ -541,7 +541,7 @@
           }
           if (dur) {
             $obj.animate({
-              'height': slider.slides.eq(slider.animatingTo).height()
+              'height': '' + slider.slides.eq(slider.animatingTo).height()
             }, dur);
           }
           else {
