@@ -25,7 +25,7 @@ Scripts
       $('.navigation').removeClass('open');
       $('.navigation').addClass('close');
     });
- 
+
   });
 
 })(jQuery);
