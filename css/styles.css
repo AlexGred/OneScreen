@@ -2829,13 +2829,16 @@ body.toolbar-horizontal .navbar-fixed-top,
 body.toolbar-vertical .navbar-fixed-top {
   top: 39px;
 }
+@media (min-width: 768px) {
+  body.toolbar-horizontal .affix.navbar-fixed-top,
+  body.toolbar-vertical .affix.navbar-fixed-top {
+    top: 39px;
+  }
+}
 body .affix.navbar-fixed-top {
   top: 0;
 }
 @media (min-width: 768px) {
-  body .affix.navbar-fixed-top {
-    top: 39px;
-  }
   body.toolbar-tray-open.toolbar-horizontal .navbar-fixed-top {
     top: 79px;
   }
@@ -2874,8 +2877,6 @@ body .affix.navbar-fixed-top {
     display: inline-block;
   }
 }
-/* Navbar
-============================*/
 /* Nav
 ==============================*/
 .nav {
@@ -2953,12 +2954,14 @@ body .affix.navbar-fixed-top {
   width: 230px;
   margin: auto;
   height: 60px;
+  float: none;
 }
 @media (min-width: 768px) {
   .site-branding {
     text-align: left;
     width: 33.33333333333333%;
     height: auto;
+    float: left;
   }
 }
 .site-branding .site-logo {
