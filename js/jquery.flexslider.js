@@ -105,8 +105,19 @@
           $(document).bind('keyup', function (event) {
             var keycode = event.keyCode;
             if (!slider.animating && (keycode === 39 || keycode === 37)) {
-              var target = (keycode === 39) ? slider.getTarget('next') :
-                           (keycode === 37) ? slider.getTarget('prev') : false;
+              var target;
+
+              if (keycode === 39) {
+                target = slider.getTarget('next');
+              }
+              else {
+                if (keycode === 37) {
+                  target = slider.getTarget('prev');
+                }
+                else {
+                  target = false;
+                }
+              }
               slider.flexAnimate(target, vars.pauseOnAction);
             }
           });
@@ -198,7 +209,13 @@
 
           if (slider.pagingCount > 1) {
             for (var i = 0; i < slider.pagingCount; i++) {
-              item = (vars.controlNav === 'thumbnails') ? '<img src="' + slider.slides.eq(i).attr('data-thumb') + '"/>' : '<a>' + j + '</a>';
+              if (vars.controlNav === 'thumbnails') {
+                item = '<img src="' + slider.slides.eq(i).attr('data-thumb') + '"/>';
+              }
+              else {
+                item = '<a>' + j + '</a>';
+              }
+              
               slider.controlNavScaffold.append('<li>' + item + '</li>');
               j++;
             }
@@ -237,7 +254,12 @@
             var target = slider.controlNav.index($this);
 
             if (!$this.hasClass(namespace + 'active')) {
-              (target > slider.currentSlide) ? slider.direction = 'next' : slider.direction = 'prev';
+              if (target > slider.currentSlide) {
+                slider.direction = 'next';
+              }
+              else {
+                slider.direction = 'prev';
+              }
               slider.flexAnimate(target, vars.pauseOnAction);
             }
           });
@@ -248,8 +270,14 @@
             });
           }
         },
-        set: function () {
-          var selector = (vars.controlNav === 'thumbnails') ? 'img' : 'a';
+        set: function () { 
+          var selector;
+          if (vars.controlNav === 'thumbnails') {
+            selector = 'img';
+           }
+           else {
+            selector = 'a';
+           }
           slider.controlNav = $('.' + namespace + 'control-nav li ' + selector, (slider.controlsContainer) ? slider.controlsContainer : slider);
         },
         active: function () {
@@ -332,7 +360,14 @@
             slider.pausePlay = $('.' + namespace + 'pauseplay a', slider);
           }
 
-          methods.pausePlay.update((vars.slideshow) ? namespace + 'pause' : namespace + 'play');
+          var flexDd;
+          if (vars.slideshow) {
+            flexDd = namespace + 'pause';
+          }
+          else {
+            flexDd = namespace + 'play';
+          }
+          methods.pausePlay.update(flexDd);
 
           slider.pausePlay.bind(eventType, function (event) {
             event.preventDefault();
@@ -461,8 +496,19 @@
       },
       smoothHeight: function (dur) {
         if (!vertical || fade) {
-          var $obj = (fade) ? slider : slider.viewport;
-          (dur) ? $obj.animate({'height': slider.slides.eq(slider.animatingTo).height()}, dur) : $obj.height(slider.slides.eq(slider.animatingTo).height());
+          var $obj;
+          if (fade) {
+            $obj = slider;
+          }
+          else {
+            $obj = slider.viewport;
+          }
+          if (dur) {
+            $obj.animate({'height': slider.slides.eq(slider.animatingTo).height()}, dur);
+          }
+          else {
+            $obj.height(slider.slides.eq(slider.animatingTo).height());
+          }
         }
       },
       sync: function (action) {
@@ -684,8 +730,8 @@
     // SLIDE:
     slider.setProps = function (pos, special, dur) {
       var target = (function () {
-        var posCheck = (pos) ? pos : ((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo,
-          posCalc = (function () {
+        var posCheck = (pos) ? pos : ((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo;
+        var posCalc = (function () {
             if (carousel) {
               return (special === 'setTouch') ? pos :
                       (reverse && slider.animatingTo === slider.last) ? 0 :
@@ -706,8 +752,19 @@
       }());
 
       if (slider.transitions) {
-        target = (vertical) ? 'translate3d(0,' + target + ',0)' : 'translate3d(' + target + ',0,0)';
-        dur = (dur !== undefined) ? (dur / 1000) + 's' : '0s';
+        target
+        if (vertical) {
+          target = 'translate3d(0,' + target + ',0)';
+        }
+        else {
+          target = 'translate3d(' + target + ',0,0)';
+        }
+        if (dur !== undefined) {
+          dur = (dur / 1000) + 's';
+        }
+        else {
+          dur = '0s';
+        }
         slider.container.css('-' + slider.pfx + '-transition-duration', dur);
       }
 
@@ -751,7 +808,7 @@
         // VERTICAL:
         if (vertical && !carousel) {
           slider.container.height((slider.count + slider.cloneCount) * 200 + '%').css('position', 'absolute').width('100%');
-          setTimeout(function (){
+          setTimeout(function () {
             slider.newSlides.css({'display': 'block'});
             slider.doMath();
             slider.viewport.height(slider.h);
@@ -761,7 +818,7 @@
         else {
           slider.container.width((slider.count + slider.cloneCount) * 200 + '%');
           slider.setProps(sliderOffset * slider.computedW, 'init');
-          setTimeout(function (){
+          setTimeout(function () {
             slider.doMath();
             slider.newSlides.css({'width': slider.computedW, 'float': 'left', 'display': 'block'});
             // SMOOTH HEIGHT:
@@ -791,7 +848,7 @@
       if (!carousel) {
         slider.slides.removeClass(namespace + 'active-slide').eq(slider.currentSlide).addClass(namespace + 'active-slide');
       }
-    }
+    };
 
     slider.doMath = function () {
       var slide = slider.slides.first();
@@ -812,8 +869,8 @@
                        (slider.maxW < slider.w) ? (slider.w - (slideMargin * maxItems)) / maxItems :
                        (vars.itemWidth > slider.w) ? slider.w : vars.itemWidth;
         slider.visible = Math.floor(slider.w / (slider.itemW + slideMargin));
-        slider.move = (vars.move > 0 && vars.move < slider.visible ) ? vars.move : slider.visible;
-        slider.pagingCount = Math.ceil(((slider.count - slider.visible)/slider.move) + 1);
+        slider.move = (vars.move > 0 && vars.move < slider.visible) ? vars.move : slider.visible;
+        slider.pagingCount = Math.ceil(((slider.count - slider.visible) / slider.move) + 1);
         slider.last =  slider.pagingCount - 1;
         slider.limit = (slider.pagingCount === 1) ? 0 : (vars.itemWidth > slider.w) ? ((slider.itemW + (slideMargin * 2)) * slider.count) - slider.w - slideMargin : ((slider.itemW + slideMargin) * slider.count) - slider.w - slideMargin;
       }
@@ -881,7 +938,7 @@
       // re-setup the slider to accommodate new slide
       slider.setup();
 
-      //FlexSlider: added() Callback
+      // FlexSlider: added() Callback
       vars.added(slider);
     };
     slider.removeSlide = function (obj) {
@@ -912,11 +969,11 @@
       vars.removed(slider);
     };
 
-    //FlexSlider: Initialize
+    // FlexSlider: Initialize
     methods.init();
-  }
+  };
 
-  //FlexSlider: Default Settings
+  // FlexSlider: Default Settings
   $.flexslider.defaults = {
     namespace: 'flex-',             // {NEW} String: Prefix string attached to the class of every element generated by the plugin
     selector: '.slides > li',       // {NEW} Selector: Must match a simple pattern. '{container} > {slide}' -- Ignore pattern at your own peril
@@ -974,10 +1031,10 @@
     end: function () {},              // Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
     added: function () {},            // {NEW} Callback: function(slider) - Fires after a slide is added
     removed: function () {}           // {NEW} Callback: function(slider) - Fires after a slide is removed
-  }
+  };
 
 
-  //FlexSlider: Plugin Function
+  // FlexSlider: Plugin Function
   $.fn.flexslider = function (options) {
     if (options === undefined) {
       options = {};
@@ -995,7 +1052,7 @@
             options.start($this);
           }
         }
-        else if ($this.data('flexslider') == undefined) {
+        else if ($this.data('flexslider') === undefined) {
           new $.flexslider(this, options);
         }
       });
@@ -1014,6 +1071,6 @@
         }
       }
     }
-  }
+  };
 
 })(jQuery);
