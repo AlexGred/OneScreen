@@ -19,5 +19,5 @@ slider-js:
 
 animation-js:
   js:
-    js/jquery.viewportchecker.min.js:  {}
+    js/jquery.viewportchecker.js:  {}
     js/animation.js: {}
