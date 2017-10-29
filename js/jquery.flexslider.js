@@ -215,14 +215,19 @@
               else {
                 item = '<a>' + j + '</a>';
               }
-              
+
               slider.controlNavScaffold.append('<li>' + item + '</li>');
               j++;
             }
           }
 
           // CONTROLSCONTAINER:
-          (slider.controlsContainer) ? $(slider.controlsContainer).append(slider.controlNavScaffold) : slider.append(slider.controlNavScaffold);
+          if (slider.controlsContainer) {
+            $(slider.controlsContainer).append(slider.controlNavScaffold);
+          }
+          else {
+            slider.append(slider.controlNavScaffold);
+          }
           methods.controlNav.set();
 
           methods.controlNav.active();
@@ -270,14 +275,14 @@
             });
           }
         },
-        set: function () { 
+        set: function () {
           var selector;
           if (vars.controlNav === 'thumbnails') {
             selector = 'img';
-           }
-           else {
+          }
+          else {
             selector = 'a';
-           }
+          }
           slider.controlNav = $('.' + namespace + 'control-nav li ' + selector, (slider.controlsContainer) ? slider.controlsContainer : slider);
         },
         active: function () {
@@ -294,7 +299,12 @@
             slider.controlNav.eq(pos).closest('li').remove();
           }
           methods.controlNav.set();
-          (slider.pagingCount > 1 && slider.pagingCount !== slider.controlNav.length) ? slider.update(pos, action) : methods.controlNav.active();
+          if (slider.pagingCount > 1 && slider.pagingCount !== slider.controlNav.length) {
+            slider.update(pos, action);
+          }
+          else {
+            methods.controlNav.active();
+          }
         }
       },
       directionNav: {
@@ -390,7 +400,12 @@
           }
         },
         update: function (state) {
-          (state === 'play') ? slider.pausePlay.removeClass(namespace + 'pause').addClass(namespace + 'play').text(vars.playText) : slider.pausePlay.removeClass(namespace + 'play').addClass(namespace + 'pause').text(vars.pauseText);
+          if (state === 'play') {
+            slider.pausePlay.removeClass(namespace + 'pause').addClass(namespace + 'play').text(vars.playText);
+          }
+          else {
+            slider.pausePlay.removeClass(namespace + 'play').addClass(namespace + 'pause').text(vars.pauseText);
+          }
         }
       },
       touch: function () {
@@ -752,7 +767,6 @@
       }());
 
       if (slider.transitions) {
-        target
         if (vertical) {
           target = 'translate3d(0,' + target + ',0)';
         }
