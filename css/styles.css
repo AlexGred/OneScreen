@@ -1,4 +1,4 @@
-/* 
+/*
 
   Style
 
@@ -2368,9 +2368,9 @@
 */
 /* Components
 ==================================*/
-/* 
+/*
 
-  Basic html elements 
+  Basic html elements
 
 */
 * {
@@ -2895,14 +2895,14 @@ body .affix.navbar-fixed-top {
   Header
 
 */
-/* Header 
+/* Header
 ================================*/
 .not-front #header-region {
   position: relative;
   overflow: hidden;
   height: 60px;
 }
-/* Menu bar 
+/* Menu bar
 ===================================*/
 .site-navigation {
   min-height: 60px;
@@ -2946,7 +2946,7 @@ body .affix.navbar-fixed-top {
   background: #333237;
   margin-top: 0;
 }
-/* Site branding 
+/* Site branding
 ===================================*/
 .site-branding {
   text-align: center;
@@ -3204,7 +3204,7 @@ h1.page-title:after {
   background: -moz-radial-gradient(#fed136 90%, transparent 10%);
   background: radial-gradient(#fed136 10%, transparent 90%);
 }
-/* Block 
+/* Block
 =================================*/
 .block .block-title,
 .block h2 {
@@ -3226,7 +3226,7 @@ h1.page-title:after {
   font-size: 13px;
   font-weight: bold;
 }
-/* Profile 
+/* Profile
 =================================*/
 .profile {
   margin: 1.5385em 0;
@@ -3368,7 +3368,7 @@ h1.page-title:after {
   font-weight: 600;
   color: #444444;
 }
-/* Tags 
+/* Tags
 ================================= */
 .field-name-field-tags {
   margin: 0 0 10px 0;
@@ -3423,7 +3423,7 @@ h1.page-title:after {
   top: 0;
   border-right: 1px solid rgba(250, 250, 250, 0.5);
 }
-/* Content 
+/* Content
 =================================*/
 .path-node #content .field-name-field-image img {
   margin-bottom: 20px;
@@ -3461,7 +3461,7 @@ h1.page-title:after {
   text-transform: none;
   font-weight: 500;
 }
-/* Comments 
+/* Comments
 ======================*/
 .comment {
   margin-bottom: 40px;
@@ -3584,7 +3584,7 @@ h1.page-title:after {
 .comments img {
   max-width: none;
 }
-/* Comment form 
+/* Comment form
 ======================*/
 .comment-form label {
   font-size: 0.929em;
@@ -3669,7 +3669,7 @@ h2.comment-form {
 #comment-body-add-more-wrapper .form-type-textarea label {
   margin-bottom: 0.4em;
 }
-/* Search 
+/* Search
 ==========================*/
 .path-search #search-form .form-item-keys label {
   display: block;
@@ -3736,7 +3736,7 @@ form .form-type-checkbox .description {
 form .form-actions {
   padding-top: 10px;
 }
-/* Fieldset 
+/* Fieldset
 =================== */
 fieldset {
   background: #ffffff;
@@ -3783,7 +3783,7 @@ fieldset .fieldset-description {
 .node-form .vertical-tabs .fieldset-wrapper {
   margin-top: 0;
 }
-/* Filter 
+/* Filter
 ===================== */
 .filter-wrapper {
   top: 0;
@@ -3914,7 +3914,7 @@ fieldset .fieldset-description {
     text-align: left;
   }
 }
-/* Bottom region 
+/* Bottom region
 =========================*/
 #bottom {
   padding: 20px 0px 40px 0px;
@@ -3938,7 +3938,7 @@ fieldset .fieldset-description {
 #footer {
   opacity: 0;
 }
-/* Copyright block 
+/* Copyright block
 ===========================*/
 #block-onescreen-powered span {
   font-weight: 500;
