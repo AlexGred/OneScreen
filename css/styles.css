@@ -2567,6 +2567,7 @@ ol ol {
 }
 ul li {
   list-style: none;
+  margin-left: -17px;
 }
 ul li:before {
   color: #fed136;
@@ -4581,6 +4582,14 @@ fieldset .fieldset-description {
 }
 #toolbar-administration .toolbar-menu li:before {
   display: none;
+}
+.links li,
+.menu li,
+.slides li,
+.flex-direction-nav li,
+.contextual-links li,
+.tabs li {
+  margin-left: 0;
 }
 .links li:before,
 .menu li:before,
