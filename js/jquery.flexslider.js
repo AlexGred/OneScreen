@@ -55,7 +55,7 @@
           var obj = document.createElement('div');
           var props = ['perspectiveProperty', 'WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective'];
           for (var i in props) {
-            if (obj.style[props[i]] !== undefined) {
+            if (typeof obj.style[props[i]] !== 'undefined') {
               slider.pfx = props[i].replace('Perspective', '').toLowerCase();
               slider.prop = '-' + slider.pfx + '-transform';
               return true;
@@ -428,11 +428,32 @@
             cwidth = (vertical) ? slider.h : slider. w;
             startT = Number(new Date());
             // CAROUSEL:
-            offset = (carousel && reverse && slider.animatingTo === slider.last) ? 0 :
-                     (carousel && reverse) ? slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo) :
-                     (carousel && slider.currentSlide === slider.last) ? slider.limit :
-                     (carousel) ? ((slider.itemW + vars.itemMargin) * slider.move) * slider.currentSlide :
-                     (reverse) ? (slider.last - slider.currentSlide + slider.cloneOffset) * cwidth : (slider.currentSlide + slider.cloneOffset) * cwidth;
+            if (carousel && reverse && slider.animatingTo === slider.last) {
+              offset = 0;
+            }
+            else {
+              if (carousel && reverse) {
+                offset = slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo);
+              }
+              else {
+                if (carousel && slider.currentSlide === slider.last) {
+                  offset = slider.limit;
+                }
+                else {
+                  if (carousel) {
+                    offset =  ((slider.itemW + vars.itemMargin) * slider.move) * slider.currentSlide;
+                  }
+                  else {
+                    if (reverse) {
+                      offset = (slider.last - slider.currentSlide + slider.cloneOffset) * cwidth;
+                    }
+                    else {
+                      offset = (slider.currentSlide + slider.cloneOffset) * cwidth;
+                    }
+                  }
+                }
+              }
+            }
             startX = (vertical) ? e.touches[0].pageY : e.touches[0].pageX;
             startY = (vertical) ? e.touches[0].pageX : e.touches[0].pageY;
 
@@ -784,10 +805,27 @@
         var posCheck = (pos) ? pos : ((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo;
         var posCalc = (function () {
           if (carousel) {
-            return (special === 'setTouch') ? pos :
-                    (reverse && slider.animatingTo === slider.last) ? 0 :
-                    (reverse) ? slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo) :
-                    (slider.animatingTo === slider.last) ? slider.limit : posCheck;
+            if (special === 'setTouch') {
+              return pos;
+            }
+            else {
+              if (reverse && slider.animatingTo === slider.last) {
+                return 0;
+              }
+              else {
+                if (reverse) {
+                  return slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo);
+                }
+                else {
+                  if (slider.animatingTo === slider.last) {
+                    return slider.limit;
+                  }
+                  else {
+                    return posCheck;
+                  }
+                }
+              }
+            }
           }
           else {
             switch (special) {
@@ -809,7 +847,7 @@
         else {
           target = 'translate3d(' + target + ',0,0)';
         }
-        if (dur !== undefined) {
+        if (typeof dur !== 'undefined') {
           dur = (dur / 1000) + 's';
         }
         else {
@@ -819,7 +857,7 @@
       }
 
       slider.args[slider.prop] = target;
-      if (slider.transitions || dur === undefined) {
+      if (typeof slider.transitions || dur === 'undefined') {
         slider.container.css(slider.args);
       }
     };
@@ -936,7 +974,7 @@
       if (carousel) {
         slider.itemT = vars.itemWidth + slideMargin;
         slider.minW = (minItems) ? minItems * slider.itemT : slider.w;
-        slider.maxW = (maxItems) ? maxItems * slider.itemT : slider.w; 
+        slider.maxW = (maxItems) ? maxItems * slider.itemT : slider.w;
         if (slider.minW > slider.w) {
           slider.itemW = (slider.w - (slideMargin * minItems)) / minItems;
         }
@@ -956,7 +994,7 @@
         slider.visible = Math.floor(slider.w / (slider.itemW + slideMargin));
         slider.move = (vars.move > 0 && vars.move < slider.visible) ? vars.move : slider.visible;
         slider.pagingCount = Math.ceil(((slider.count - slider.visible) / slider.move) + 1);
-        slider.last = slider.pagingCount - 1; 
+        slider.last = slider.pagingCount - 1;
         if (slider.pagingCount === 1) {
           slider.limit = 0;
         }
@@ -1019,7 +1057,7 @@
 
       // append new slide
       if (vertical && reverse) {
-        if (pos !== undefined) {
+        if (typeof pos !== 'undefined') {
           slider.slides.eq(slider.count - pos).after($obj);
         }
         else {
@@ -1027,7 +1065,7 @@
         }
       }
       else {
-        if (pos !== undefined) {
+        if (typeof pos !== 'undefined') {
           slider.slides.eq(pos).before($obj);
         }
         else {
@@ -1146,7 +1184,7 @@
 
   // FlexSlider: Plugin Function
   $.fn.flexslider = function (options) {
-    if (options === undefined) {
+    if (typeof options === 'undefined') {
       options = {};
     }
 
@@ -1162,7 +1200,7 @@
             options.start($this);
           }
         }
-        else if ($this.data('flexslider') === undefined) {
+        else if (typeof $this.data('flexslider') === 'undefined') {
           new $.flexslider(this, options);
         }
       });
