@@ -15,15 +15,15 @@
 */
 
 (function ($) {
-  'use strict'
+  'use strict';
 
   $.fn.viewportChecker = function (useroptions) {
     // Define options and extend with user
 
     var options = {
       classToAdd: 'visible',
-      classToRemove : 'invisible',
-      classToAddForFullView : 'full-visible',
+      classToRemove: 'invisible',
+      classToAddForFullView: 'full-visible',
       removeClassAfterAnimation: false,
       offset: 100,
       repeat: false,
@@ -35,8 +35,8 @@
     $.extend(options, useroptions);
 
     // Cache the given element and height of the browser
-    var $elem = this,
-      boxSize = {height: $(options.scrollBox).height(), width: $(options.scrollBox).width()};
+    var $elem = this;
+    var boxSize = {height: $(options.scrollBox).height(), width: $(options.scrollBox).width()};
 
     /*
       * Main method that checks the elements and adds or removes the class(es)
@@ -46,7 +46,7 @@
       var viewportEnd;
 
       // Set some vars to check with
-      if (!options.scrollHorizontal){
+      if (!options.scrollHorizontal) {
         viewportStart = Math.max(
           $('html').scrollTop(),
           $('body').scrollTop(),
@@ -105,7 +105,7 @@
         }
 
         // Check if the offset is percentage based
-        if (String(objOptions.offset).indexOf("%") > 0) {
+        if (String(objOptions.offset).indexOf('%') > 0) {
           objOptions.offset = (parseInt(objOptions.offset) / 100) * boxSize.height;
         }
 
@@ -114,7 +114,7 @@
         var rawEnd = (!objOptions.scrollHorizontal) ? rawStart + $obj.height() : rawStart + $obj.width();
 
         // Add the defined offset
-        var elemStart = Math.round( rawStart ) + objOptions.offset;
+        var elemStart = Math.round(rawStart) + objOptions.offset;
         var elemEnd = (!objOptions.scrollHorizontal) ? elemStart + $obj.height() : elemStart + $obj.width();
 
         if (objOptions.invertBottomOffset) {
@@ -129,7 +129,7 @@
           $obj.addClass(objOptions.classToAdd);
 
           // Do the callback function. Callback wil send the jQuery object as parameter
-          objOptions.callbackFunction($obj, "add");
+          objOptions.callbackFunction($obj, 'add');
 
           // Check if full element is in view
           if (rawEnd <= viewportEnd && rawStart >= viewportStart) {
@@ -150,7 +150,7 @@
 
         // Remove class if not in viewport and repeat is true
         }
-        else if ($obj.hasClass(objOptions.classToAdd) && (objOptions.repeat)){
+        else if ($obj.hasClass(objOptions.classToAdd) && (objOptions.repeat)) {
           $obj.removeClass(objOptions.classToAdd + ' ' + objOptions.classToAddForFullView);
 
           // Do the callback function.
@@ -174,7 +174,7 @@
      */
 
     // Select the correct events
-    if('ontouchstart' in window || 'onmsgesturechange' in window) {
+    if ('ontouchstart' in window || 'onmsgesturechange' in window) {
       // Device with touchscreen
       $(document).bind('touchmove MSPointerMove pointermove', this.checkElements);
     }

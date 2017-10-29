@@ -1,9 +1,10 @@
-(function($) {
+(function ($) {
+  'use strict';
 
-  $(window).ready(function() {
+  $(window).ready(function () {
 
     $('#slidebox').flexslider({
-      animation: "fade",
+      animation: 'fade',
       directionNav: true,
       controlNav: true
     });

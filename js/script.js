@@ -5,9 +5,10 @@ Scripts
 */
 
 
-(function($) {
+(function ($) {
+  'use strict';
 
-  $(document).ready(function() {
+  $(document).ready(function () {
 
     $('.site-navigation').affix({
       offset: {
@@ -15,16 +16,16 @@ Scripts
       }
     });
 
-    $('.mobile-nav').click(function() {
+    $('.mobile-nav').click(function () {
       $('.navigation').removeClass('close');
       $('.navigation').addClass('open');
     });
 
-    $('.mobile-nav-close').click(function() {
+    $('.mobile-nav-close').click(function () {
       $('.navigation').removeClass('open');
       $('.navigation').addClass('close');
     });
-    
+ 
   });
 
 })(jQuery);
