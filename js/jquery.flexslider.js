@@ -731,14 +731,42 @@
     slider.canAdvance = function (target, fromNav) {
       // ASNAV:
       var last = (asNav) ? slider.pagingCount - 1 : slider.last;
-      return (fromNav) ? true :
-             (asNav && slider.currentItem === slider.count - 1 && target === 0 && slider.direction === 'prev') ? true :
-             (asNav && slider.currentItem === 0 && target === slider.pagingCount - 1 && slider.direction !== 'next') ? false :
-             (target === slider.currentSlide && !asNav) ? false :
-             (vars.animationLoop) ? true :
-             (slider.atEnd && slider.currentSlide === 0 && target === last && slider.direction !== 'next') ? false :
-             (slider.atEnd && slider.currentSlide === last && target === 0 && slider.direction === 'next') ? false :
-             true;
+      if (fromNav) {
+        return true;
+      }
+      else {
+        if (asNav && slider.currentItem === slider.count - 1 && target === 0 && slider.direction === 'prev') {
+          return true;
+        }
+        else {
+          if (asNav && slider.currentItem === 0 && target === slider.pagingCount - 1 && slider.direction !== 'next') {
+            return false;
+          }
+          else {
+            if (target === slider.currentSlide && !asNav) {
+              return false;
+            }
+            else {
+              if (vars.animationLoop) {
+                return true;
+              }
+              else {
+                if (slider.atEnd && slider.currentSlide === 0 && target === last && slider.direction !== 'next') {
+                  return false;
+                }
+                else {
+                  if (slider.atEnd && slider.currentSlide === last && target === 0 && slider.direction === 'next') {
+                    return false;
+                  }
+                  else {
+                    return true;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     };
     slider.getTarget = function (dir) {
       slider.direction = dir;
@@ -908,15 +936,38 @@
       if (carousel) {
         slider.itemT = vars.itemWidth + slideMargin;
         slider.minW = (minItems) ? minItems * slider.itemT : slider.w;
-        slider.maxW = (maxItems) ? maxItems * slider.itemT : slider.w;
-        slider.itemW = (slider.minW > slider.w) ? (slider.w - (slideMargin * minItems)) / minItems :
-                       (slider.maxW < slider.w) ? (slider.w - (slideMargin * maxItems)) / maxItems :
-                       (vars.itemWidth > slider.w) ? slider.w : vars.itemWidth;
+        slider.maxW = (maxItems) ? maxItems * slider.itemT : slider.w; 
+        if (slider.minW > slider.w) {
+          slider.itemW = (slider.w - (slideMargin * minItems)) / minItems;
+        }
+        else {
+          if (slider.maxW < slider.w) {
+            slider.itemW = (slider.w - (slideMargin * maxItems)) / maxItems;
+          }
+          else {
+            if (vars.itemWidth > slider.w) {
+              slider.itemW = slider.w;
+            }
+            else {
+              slider.itemW = vars.itemWidth;
+            }
+          }
+        }
         slider.visible = Math.floor(slider.w / (slider.itemW + slideMargin));
         slider.move = (vars.move > 0 && vars.move < slider.visible) ? vars.move : slider.visible;
         slider.pagingCount = Math.ceil(((slider.count - slider.visible) / slider.move) + 1);
-        slider.last = slider.pagingCount - 1;
-        slider.limit = (slider.pagingCount === 1) ? 0 : (vars.itemWidth > slider.w) ? ((slider.itemW + (slideMargin * 2)) * slider.count) - slider.w - slideMargin : ((slider.itemW + slideMargin) * slider.count) - slider.w - slideMargin;
+        slider.last = slider.pagingCount - 1; 
+        if (slider.pagingCount === 1) {
+          slider.limit = 0;
+        }
+        else {
+          if (vars.itemWidth > slider.w) {
+            slider.limit = ((slider.itemW + (slideMargin * 2)) * slider.count) - slider.w - slideMargin;
+          }
+          else {
+            slider.limit = ((slider.itemW + slideMargin) * slider.count) - slider.w - slideMargin;
+          }
+        }
       }
       else {
         slider.itemW = slider.w;
