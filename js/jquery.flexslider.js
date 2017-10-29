@@ -1,3 +1,5 @@
+/*eslint quote-props: ["error", "as-needed"]*/
+
 /*
  * jQuery FlexSlider v2.1
  * http://www.woothemes.com/flexslider/
@@ -541,7 +543,7 @@
           }
           if (dur) {
             $obj.animate({
-              'height': '' + slider.slides.eq(slider.animatingTo).height()
+              'height': slider.slides.eq(slider.animatingTo).height()
             }, dur);
           }
           else {
