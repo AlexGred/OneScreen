@@ -1,4 +1,4 @@
-/*eslint quote-props: ["error", "as-needed"]*/
+/* eslint quote-props: ["error", "as-needed", {"unnecessary": false}] */
 
 /*
  * jQuery FlexSlider v2.1
