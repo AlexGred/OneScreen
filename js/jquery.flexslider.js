@@ -551,7 +551,7 @@
         // SLIDE:
         if (!fade) {
           var dimension = (vertical) ? slider.slides.filter(':first').height() : slider.computedW;
-          var margi';
+          var margi;
           var slideString; 
           var calcNext;
 
