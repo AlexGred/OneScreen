@@ -359,12 +359,22 @@ h1.page-title {
       width: 100%;
     }
 
-    & > h2 {
-      font-size: 20px;
-      color:#606060;
-      margin-bottom: 15px;
-      text-transform: none;
-      font-weight: 500;
+    .block-wrapper {
+
+      & > h2 {
+        font-size: 20px;
+        color:#606060;
+        margin-bottom: 15px;
+        text-transform: none;
+        font-weight: 500;
+      }
+    }
+  }
+
+  nav {
+
+    & > h2:extend(.sidebar .block .block-wrapper > h2) {
+
     }
   }
 
@@ -374,6 +384,36 @@ h1.page-title {
 
   #block-onescreen-tools:extend(.sidebar .block) {
     
+  }
+}
+
+
+/* Article
+=======================*/
+.page-node-type-article {
+
+  .full {
+
+    .field-name-field-image {
+      float: left;
+
+      @media @s {
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.article {
+
+  &.teaser {
+    
+    .field-name-field-image {
+      width: 150px;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
 

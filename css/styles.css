@@ -3458,12 +3458,29 @@ h1.page-title:after {
 .sidebar .block input {
   width: 100%;
 }
-.sidebar .block > h2 {
+.sidebar .block .block-wrapper > h2,
+.sidebar nav > h2 {
   font-size: 20px;
   color: #606060;
   margin-bottom: 15px;
   text-transform: none;
   font-weight: 500;
+}
+/* Article
+=======================*/
+.page-node-type-article .full .field-name-field-image {
+  float: left;
+}
+@media (min-width: 768px) {
+  .page-node-type-article .full .field-name-field-image {
+    padding-right: 20px;
+  }
+}
+.article.teaser .field-name-field-image {
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 /* Comments
 ======================*/
@@ -3915,7 +3932,7 @@ fieldset .fieldset-description {
 @media (min-width: 768px) {
   .copyright-block-2 {
     margin-top: 0;
-    text-align: left;
+    text-align: right;
   }
 }
 /* Bottom region
@@ -3936,6 +3953,12 @@ fieldset .fieldset-description {
 #bottom .block a:hover,
 #bottom nav a:hover {
   color: #989898;
+}
+#bottom .navbar-nav {
+  float: none;
+}
+#bottom .navbar-nav > li {
+  float: none;
 }
 /* Footer
 ======================== */
@@ -4580,15 +4603,13 @@ fieldset .fieldset-description {
 #toolbar-administration .toolbar-tray a {
   color: #565656;
 }
-#toolbar-administration .toolbar-menu li:before {
-  display: none;
-}
 .links li,
 .menu li,
 .slides li,
 .flex-direction-nav li,
 .contextual-links li,
-.tabs li {
+.tabs li,
+.toolbar-menu li {
   margin-left: 0;
 }
 .links li:before,
@@ -4596,7 +4617,8 @@ fieldset .fieldset-description {
 .slides li:before,
 .flex-direction-nav li:before,
 .contextual-links li:before,
-.tabs li:before {
+.tabs li:before,
+.toolbar-menu li:before {
   display: none;
 }
 .links {
