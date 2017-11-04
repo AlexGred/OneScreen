@@ -4234,6 +4234,14 @@ fieldset .fieldset-description {
   border-top: 5px solid #fed136;
   opacity: 0;
 }
+#bottom .footer-block {
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  #bottom .footer-block {
+    margin-bottom: 0;
+  }
+}
 #bottom .block h2,
 #bottom nav h2 {
   font-weight: 100;

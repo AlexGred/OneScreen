@@ -133,13 +133,13 @@
           {% endif %}
 
           {% if page.preface_second %}
-            <div class="{{ 'preface-block hidden-xs col-sm-' ~ preface_col }}">
+            <div class="{{ 'preface-block col-xs-12 col-sm-' ~ preface_col }}">
               {{ page.preface_second }}
             </div>
           {% endif %}
 
           {% if page.preface_third %}
-            <div class="{{ 'preface-block hidden-xs col-sm-' ~ preface_col }}">
+            <div class="{{ 'preface-block col-xs-12 col-sm-' ~ preface_col }}">
               {{ page.preface_third }}
             </div>
           {% endif %}
@@ -219,7 +219,7 @@
             <div class="row">
 
               {% if page.sidebar_first %}
-                <aside id="sidebar_first" class=" sidebar {{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
+                <aside id="sidebar_first" class=" sidebar {{ 'col-xs-12 col-sm-' ~ siderbar_col }}" role="complementary">
                   {{ page.sidebar_first }}
                 </aside>
               {% endif %}
@@ -229,7 +229,7 @@
               </div>
 
               {% if page.sidebar_second %}
-                <aside id="sidebar_second" class=" sidebar {{ 'hidden-xs col-sm-' ~ siderbar_col }}" role="complementary">
+                <aside id="sidebar_second" class=" sidebar {{ 'col-xs-12 col-sm-' ~ siderbar_col }}" role="complementary">
                  {{ page.sidebar_second }}
                 </aside>
               {% endif %} 
@@ -276,19 +276,19 @@
         <div class="row">
 
           {% if page.footer_first %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="{{ 'footer-block col-xs-12 col-sm-' ~ footer_col }}">
               {{ page.footer_first }}
             </div>
           {% endif %}
 
           {% if page.footer_second %}
-            <div class="{{ 'footer-block hidden-xs col-sm-' ~ footer_col }}">
+            <div class="{{ 'footer-block col-xs-12 col-sm-' ~ footer_col }}">
               {{ page.footer_second }}
             </div>
           {% endif %}
 
           {% if page.footer_third %}
-            <div class="{{ 'footer-block hidden-xs col-sm-' ~ footer_col }}">
+            <div class="{{ 'footer-block col-xs-12 col-sm-' ~ footer_col }}">
               {{ page.footer_third }}
             </div>
           {% endif %}
