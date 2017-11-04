@@ -4236,10 +4236,12 @@ fieldset .fieldset-description {
 }
 #bottom .footer-block {
   margin-bottom: 20px;
+  text-align: center;
 }
 @media (min-width: 768px) {
   #bottom .footer-block {
     margin-bottom: 0;
+    text-align: left;
   }
 }
 #bottom .block h2,
