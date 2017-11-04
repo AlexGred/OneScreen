@@ -4238,6 +4238,9 @@ fieldset .fieldset-description {
   margin-bottom: 20px;
   text-align: center;
 }
+#bottom .footer-block:last-child {
+  margin-bottom: 0;
+}
 @media (min-width: 768px) {
   #bottom .footer-block {
     margin-bottom: 0;
