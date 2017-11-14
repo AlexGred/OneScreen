@@ -79,11 +79,12 @@ function onescreen_preprocess_page(&$variables) {
 }
 
 /**
- * Implements template_preprocess_breadcrumb()
+ * Implements hook_preprocess_HOOK() for Page templates.
  *
  * Override or insert breadcrumbs.
  */
 function onescreen_preprocess_breadcrumb(&$variables) {
+
   if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
     $variables['breadcrumb'][] = [
       'text' => $node->getTitle(),
