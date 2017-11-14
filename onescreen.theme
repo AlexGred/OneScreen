@@ -79,7 +79,7 @@ function onescreen_preprocess_page(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for Page templates.
+ * Implements hook_preprocess_HOOK().
  *
  * Override or insert breadcrumbs.
  */
