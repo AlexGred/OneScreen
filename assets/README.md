@@ -7,4 +7,4 @@ Example: assets/bootstrap/js/bootstrap.js, assets/bootstrap/js/bootstrap.css.
 * Create directory for Flexslider and install inside. 
 Place jquery.flexslider.js inside flexslider directory.
 Example: assets/flexslider/jquery.flexslider.js.
-https://github.com/woothemes/FlexSlider/zipball/master)
+(https://github.com/woothemes/FlexSlider/zipball/master)
