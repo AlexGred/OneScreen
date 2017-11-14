@@ -2,7 +2,7 @@
   'use strict';
 
   $.fn.viewportChecker = function (useroptions) {
- 
+
     // Define options and extend with user
     var options = {
       classToAdd: 'visible',
@@ -96,7 +96,7 @@
     this.checkElements();
 
     return this;
-  };  
+  };
 
   $(document).ready(function () {
 
