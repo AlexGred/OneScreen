@@ -27,7 +27,7 @@ You need upload image, add title, description and link for active button.
 dist framework to **assets/bootstrap** directory.
 * Install [Flexslider](https://github.com/woothemes/FlexSlider/zipball/master) 
 plugin to **assets/flexslider** directory.
-Replace jquery.flexslider.js inside flexslider directory.
+Place jquery.flexslider.js inside flexslider directory.
 
 
 ## Supported modules
