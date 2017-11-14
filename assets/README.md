@@ -1,0 +1,1 @@
+Add bootstrap and flexslider libraries here.
