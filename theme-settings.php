@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Theme setting callbacks for the Adminimal theme.
+ * Theme setting callbacks for the OneScreen theme.
  */
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implementation of hook_form_system_theme_settings_alter().
  */
-function onescreen_form_system_theme_settings_alter(&$form, &$form_state) {
+function onescreen_form_system_theme_settings_alter(&$form, $form_state) {
 
   $form['onescreen_settings'] = [
     '#type' => 'fieldset',
