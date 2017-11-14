@@ -23,9 +23,8 @@ You need upload image, add title, description and link for active button.
 
 ## Installation
 * Install 
-[Bootstrap](https://github.com/twbs/bootstrap/releases/
-download/v3.3.7/bootstrap-3.3.7-dist.zip) 
-framework to **assets/bootstrap** directory.
+[Bootstrap](http://getbootstrap.com/docs/3.3/getting-started/#download) 
+dist framework to **assets/bootstrap** directory.
 * Install [Flexslider](https://github.com/woothemes/FlexSlider/zipball/master) 
 plugin to **assets/flexslider** directory.
 

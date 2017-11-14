@@ -1,8 +1,7 @@
 ## Installation
 * Create directory for Bootstrap and install framework inside. 
-Example: assets/bootstrap.
-(https://github.com/twbs/bootstrap/releases/download/v3.3.7/
-bootstrap-3.3.7-dist.zip)
+Need dist botstrap. Example: assets/bootstrap.
+(http://getbootstrap.com/docs/3.3/getting-started/#download)
 * Create directory for Flexslider and install inside. 
 Example: assets/flexslider. 
 (https://github.com/woothemes/FlexSlider/zipball/master)
